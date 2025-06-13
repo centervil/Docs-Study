@@ -4,3 +4,13 @@ temp/
 .DS_Store
 *.Identifier
 *.env
+.DS_Store
+venv*
+.venv*
+oasis.log
+tools/note_post_run.txt
+tests/__pycache__/test_note_post.cpython-312-pytest-8.4.0.pyc
+tests/pytest_result.txt
+tools/oasis_help.txt
+tools/oasis_note_test_output.txt
+tools/oasis_note_test_output2.txt
