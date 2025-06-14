@@ -32,9 +32,9 @@ jobs:
           echo "NOTE_EMAIL=${{ secrets.NOTE_EMAIL }}" >> .env
           echo "NOTE_PASSWORD=${{ secrets.NOTE_PASSWORD }}" >> .env
           echo "NOTE_USER_ID=${{ secrets.NOTE_USER_ID }}" >> .env
-          echo "GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }}" >> .env
 
       - name: Post to Note.com
         run: |
           source .venv/bin/activate
-          python tools/note_post.py --folder security-study --firefox-headless 
+          python tools/note_post.py --folder security-study --firefox-headless --llm-model None
+
