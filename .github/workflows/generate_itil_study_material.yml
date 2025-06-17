@@ -68,8 +68,8 @@ jobs:
       run: |
         CURRENT_DAY=${{ steps.read_day.outputs.current_day }}
         PROMPT="${{ steps.generate_prompt.outputs.prompt }}"
-        
-        content-converter \
+
+        python -m content_converter.cli \
           --input "security-study/ITIL4-Foundation/00_plan.md" \
           --output "$OUTPUT_FOLDER_PATH/Day${CURRENT_DAY}_ITIL4-Foundation_study.md" \
           --prompt "$PROMPT"
