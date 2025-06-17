@@ -1,5 +1,4 @@
-```
-## 📚 今日の学習テーマ：変更実現
+## 📚 今日の学習テーマ：重要プラクティス詳細（2）- 変更実現
 
 ### 📝 学習の目標
 
@@ -156,4 +155,3 @@ ITIL4では、変更を以下の3つの主要な種類に分類しています�
 *   ITIL 4 Foundation Handbook
 *   AXELOS公式サイト
 *   ITIL 4 Specialist: Create, Deliver & Support モジュール
-```
