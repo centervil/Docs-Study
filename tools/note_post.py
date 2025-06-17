@@ -2,15 +2,17 @@ import argparse
 import subprocess
 import sys
 from pathlib import Path
+import os
+from dotenv import load_dotenv
 
 
 def main():
+    load_dotenv() # .envファイルを読み込む
+
     parser = argparse.ArgumentParser(description="指定ディレクトリ内のMarkdownをNote.comに投稿する（OASIS利用）")
     parser.add_argument('--folder', required=True, help='投稿対象のMarkdownファイルが入ったディレクトリ')
-    parser.add_argument('--note-email', required=False, help='Note.comのメールアドレス（省略時は.env参照）')
-    parser.add_argument('--note-password', required=False, help='Note.comのパスワード（省略時は.env参照）')
-    parser.add_argument('--note-user-id', required=False, help='Note.comのユーザーID（省略時は.env参照）')
-    parser.add_argument('--firefox-headless', action='store_true', help='Firefoxをヘッドレスで実行')
+    # Note.com認証情報は環境変数から取得することを推奨するため、引数から削除
+    parser.add_argument('--firefox-headless', action='store_true', help='Firefoxをヘッドレスで実行（デフォルトTrue）')
     args = parser.parse_args()
 
     folder_path = Path(args.folder)
@@ -18,29 +20,42 @@ def main():
         print(f"[ERROR] 指定ディレクトリが存在しません: {folder_path}")
         sys.exit(1)
 
-    # OASISコマンド組み立て
-    cmd = [
-        sys.executable.replace('python', 'oasis'),
-        '--folder_path', str(folder_path),
-        '--note'
-    ]
-    if args.note_email:
-        cmd += ['--note-email', args.note_email]
-    if args.note_password:
-        cmd += ['--note-password', args.note_password]
-    if args.note_user_id:
-        cmd += ['--note-user-id', args.note_user_id]
-    if args.firefox_headless:
-        cmd += ['--firefox-headless']
+    from oasis import OASIS
 
-    print(f"[INFO] 実行コマンド: {' '.join(cmd)}")
-    result = subprocess.run(cmd, capture_output=True, text=True)
-    print(result.stdout)
-    if result.stderr:
-        print(result.stderr, file=sys.stderr)
-    if result.returncode != 0:
-        print(f"[ERROR] 投稿処理に失敗しました (exit code: {result.returncode})", file=sys.stderr)
-        sys.exit(result.returncode)
+    # Firefoxのパスとプロファイルパスを環境変数から取得。なければデフォルト値を設定
+    firefox_binary_path = os.getenv("FIREFOX_BINARY_PATH", "/usr/bin/firefox")
+    firefox_profile_path = os.getenv("FIREFOX_PROFILE_PATH", os.path.expanduser("~/.firefox_profile_oasis"))
+
+    print(f"[INFO] Firefox Binary Path: {firefox_binary_path}")
+    print(f"[INFO] Firefox Profile Path: {firefox_profile_path}")
+
+    # OASISインスタンスを初期化（Firefox関連パスを明示的に渡す）
+    # LLM_MODELについては、.envでNoneまたは空文字が設定されていればAI機能はスキップされる
+    oasis = OASIS(
+        firefox_headless=args.firefox_headless,
+        firefox_binary_path=firefox_binary_path,
+        firefox_profile_path=firefox_profile_path
+    )
+
+    print(f"[INFO] Note.comへの投稿を開始します: {folder_path}")
+
+    result = oasis.process_folder(
+        str(folder_path),
+        post_to_qiita=False,
+        post_to_note=True,
+        post_to_wp=False,
+        post_to_zenn=False
+    )
+    print("[INFO] OASIS処理結果:")
+    print(result)
+
+    if result.get('note', {}).get('status') == 'success':
+        print("[INFO] Note.comへの投稿が成功しました！")
+    else:
+        error_message = result.get('note', {}).get('message', '不明なエラー')
+        print(f"[ERROR] Note.comへの投稿に失敗した可能性があります。詳細: {error_message}", file=sys.stderr)
+        sys.exit(1)
+
 
 if __name__ == '__main__':
     main() 

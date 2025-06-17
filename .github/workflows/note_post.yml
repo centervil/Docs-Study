@@ -5,8 +5,6 @@ on:
   push:
     paths:
       - 'security-study/**/*.md'
-      - 'tools/note_post.py'
-      - '.github/workflows/note_post.yml'
 
 jobs:
   post-to-note:
@@ -33,6 +31,9 @@ jobs:
           echo "NOTE_PASSWORD=${{ secrets.NOTE_PASSWORD }}" >> .env
           echo "NOTE_USER_ID=${{ secrets.NOTE_USER_ID }}" >> .env
           echo "GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }}" >> .env
+          echo "LLM_MODEL=${{ secrets.LLM_MODEL }}" >> .env
+          echo "FIREFOX_BINARY_PATH=/usr/bin/firefox" >> .env
+          echo "FIREFOX_PROFILE_PATH=${{ github.workspace }}/.firefox_profile_oasis" >> .env
 
       - name: Post to Note.com
         run: |
