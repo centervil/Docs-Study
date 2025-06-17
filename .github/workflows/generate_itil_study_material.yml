@@ -76,6 +76,7 @@ jobs:
         python -m content_converter.cli \
           --input "security-study/ITIL4-Foundation/00_plan.md" \
           --output "$OUTPUT_FOLDER_PATH/Day${CURRENT_DAY}_ITIL4-Foundation_study.md" \
+          --template "$FORMAT_FILE_PATH" \
           --prompt "$PROMPT"
     
     - name: Increment day number and save
