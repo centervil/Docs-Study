@@ -26,10 +26,11 @@ jobs:
       uses: actions/setup-python@v4
       with:
         python-version: '3.x'
-    
-    - name: Install content-converter
+
+    - name: Install Content-Converter
       run: |
-        pip install git+https://github.com/centervil/content-converter.git
+        pip install -r https://raw.githubusercontent.com/centervil/Content-Converter/refs/heads/main/requirements.txt
+        pip install content-converter
     
     - name: Read current day number
       id: read_day
