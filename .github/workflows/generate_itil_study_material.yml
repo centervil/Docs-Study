@@ -58,12 +58,13 @@ jobs:
         TEMPLATE_CONTENT=$(cat prompts/itil_day_content_prompt_template.md)
         PROMPT=$(echo "$TEMPLATE_CONTENT" | sed "s/\[DAY_NUMBER\]/$CURRENT_DAY/g")
         
-        echo "prompt<<EOF" >> $GITHUB_OUTPUT
-        echo "$PROMPT" >> $GITHUB_OUTPUT
-        echo "EOF" >> $GITHUB_OUTPUT
+        # Create a temporary file for the prompt and store its path
+        PROMPT_FILE_PATH="prompt_${GITHUB_RUN_ID}.txt"
+        echo "$PROMPT" > "$PROMPT_FILE_PATH"
+        echo "prompt_file_path=$PROMPT_FILE_PATH" >> $GITHUB_OUTPUT
         
-        echo "Generated prompt: $PROMPT"
-    
+        echo "Generated prompt written to: $PROMPT_FILE_PATH"
+
     - name: Generate study material using content-converter
       if: steps.check_max.outputs.should_continue == 'true'
       env:
@@ -71,13 +72,13 @@ jobs:
         LLM_MODEL: ${{ secrets.LLM_MODEL }}
       run: |
         CURRENT_DAY=${{ steps.read_day.outputs.current_day }}
-        PROMPT="${{ steps.generate_prompt.outputs.prompt }}"
-
+        PROMPT_FILE_PATH=${{ steps.generate_prompt.outputs.prompt_file_path }}
+        
         python -m content_converter.cli \
           --input "security-study/ITIL4-Foundation/00_plan.md" \
           --output "$OUTPUT_FOLDER_PATH/Day${CURRENT_DAY}_ITIL4-Foundation_study.md" \
           --template "$FORMAT_FILE_PATH" \
-          --prompt "$PROMPT"
+          --prompt "$PROMPT_FILE_PATH" # Pass the file path here
     
     - name: Increment day number and save
       if: steps.check_max.outputs.should_continue == 'true'
