@@ -1,7 +1,3 @@
-[submodule "rules-common"]
-	path = rules-common
-	url = https://github.com/centervil/my-cursor-rules.git
-
 [submodule "Docs-common"]
 	path = Docs-common
 	url = https://github.com/centervil/Docs.git
