@@ -57,8 +57,12 @@ jobs:
         CURRENT_DAY=${{ steps.read_day.outputs.current_day }}
         TEMPLATE_CONTENT=$(cat prompts/itil_day_content_prompt_template.md)
         PROMPT=$(echo "$TEMPLATE_CONTENT" | sed "s/\[DAY_NUMBER\]/$CURRENT_DAY/g")
+        
+        echo "prompt<<EOF" >> $GITHUB_OUTPUT
+        echo "$PROMPT" >> $GITHUB_OUTPUT
+        echo "EOF" >> $GITHUB_OUTPUT
+        
         echo "Generated prompt: $PROMPT"
-        echo "prompt=$PROMPT" >> $GITHUB_OUTPUT
     
     - name: Generate study material using content-converter
       if: steps.check_max.outputs.should_continue == 'true'
