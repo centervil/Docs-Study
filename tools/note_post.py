@@ -8,6 +8,14 @@ from dotenv import load_dotenv
 
 def main():
     load_dotenv() # .envファイルを読み込む
+    print("[DEBUG] .env file loaded.")
+
+    # 環境変数の存在確認 (値は出力しない)
+    print(f"[DEBUG] NOTE_EMAIL exists: {'NOTE_EMAIL' in os.environ}")
+    print(f"[DEBUG] NOTE_PASSWORD exists: {'NOTE_PASSWORD' in os.environ}")
+    print(f"[DEBUG] NOTE_USER_ID exists: {'NOTE_USER_ID' in os.environ}")
+    print(f"[DEBUG] GEMINI_API_KEY exists: {'GEMINI_API_KEY' in os.environ}")
+    print(f"[DEBUG] LLM_MODEL exists: {'LLM_MODEL' in os.environ}")
 
     parser = argparse.ArgumentParser(description="指定ディレクトリ内のMarkdownをNote.comに投稿する（OASIS利用）")
     parser.add_argument('--folder', required=True, help='投稿対象のMarkdownファイルが入ったディレクトリ')
@@ -36,8 +44,10 @@ def main():
         firefox_binary_path=firefox_binary_path,
         firefox_profile_path=firefox_profile_path
     )
+    print("[DEBUG] OASIS instance initialized.")
 
     print(f"[INFO] Note.comへの投稿を開始します: {folder_path}")
+    print(f"[DEBUG] Calling oasis.process_folder with folder: {folder_path}")
 
     result = oasis.process_folder(
         str(folder_path),
