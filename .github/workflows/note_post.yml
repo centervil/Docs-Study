@@ -35,6 +35,10 @@ jobs:
           echo "FIREFOX_BINARY_PATH=/usr/bin/firefox" >> .env
           echo "FIREFOX_PROFILE_PATH=${{ github.workspace }}/.firefox_profile_oasis" >> .env
 
+      - name: Create Firefox Profile Directory
+        run: |
+          mkdir -p ${{ github.workspace }}/.firefox_profile_oasis
+
       - name: Post to Note.com
         run: |
           source .venv/bin/activate
