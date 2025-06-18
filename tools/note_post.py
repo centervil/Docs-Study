@@ -9,6 +9,7 @@ from dotenv import load_dotenv
 def main():
     load_dotenv() # .envファイルを読み込む
     print("[DEBUG] .env file loaded.")
+    print(f"[DEBUG] Length of GEMINI_API_KEY: {len(os.getenv('GEMINI_API_KEY')) if os.getenv('GEMINI_API_KEY') else 0}")
 
     # 環境変数の存在確認 (値は出力しない)
     print(f"[DEBUG] NOTE_EMAIL exists: {'NOTE_EMAIL' in os.environ}")
