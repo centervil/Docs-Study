@@ -30,8 +30,8 @@ jobs:
           echo "NOTE_EMAIL=${{ secrets.NOTE_EMAIL }}" >> .env
           echo "NOTE_PASSWORD=${{ secrets.NOTE_PASSWORD }}" >> .env
           echo "NOTE_USER_ID=${{ secrets.NOTE_USER_ID }}" >> .env
-          echo "GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }}" >> .env
-          echo "LLM_MODEL=${{ secrets.LLM_MODEL }}" >> .env
+          if [ -n "${{ secrets.GOOGLE_API_KEY }}" ]; then echo "GEMINI_API_KEY=${{ secrets.GOOGLE_API_KEY }}" >> .env; else echo "[WARNING] GEMINI_API_KEY is not set."; fi
+          if [ -n "${{ secrets.LLM_MODEL }}" ]; then echo "LLM_MODEL=${{ secrets.LLM_MODEL }}" >> .env; else echo "[WARNING] LLM_MODEL is not set."; fi
           echo "FIREFOX_BINARY_PATH=/usr/bin/firefox" >> .env
           echo "FIREFOX_PROFILE_PATH=${{ github.workspace }}/.firefox_profile_oasis" >> .env
 
