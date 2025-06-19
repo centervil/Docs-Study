@@ -18,13 +18,6 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Set up venv and install dependencies
-        run: |
-          python -m venv .venv
-          source .venv/bin/activate
-          pip install -U pip
-          pip install oasis-article
-
       - name: Create .env from secrets
         run: |
           echo "NOTE_EMAIL=${{ secrets.NOTE_EMAIL }}" >> .env
@@ -32,8 +25,6 @@ jobs:
           echo "NOTE_USER_ID=${{ secrets.NOTE_USER_ID }}" >> .env
           if [ -n "${{ secrets.GOOGLE_API_KEY }}" ]; then echo "GEMINI_API_KEY=${{ secrets.GOOGLE_API_KEY }}" >> .env; else echo "[WARNING] GEMINI_API_KEY is not set."; fi
           if [ -n "${{ secrets.LLM_MODEL }}" ]; then echo "LLM_MODEL=${{ secrets.LLM_MODEL }}" >> .env; else echo "[WARNING] LLM_MODEL is not set."; fi
-          echo "FIREFOX_BINARY_PATH=/usr/bin/firefox" >> .env
-          echo "FIREFOX_PROFILE_PATH=${{ github.workspace }}/.firefox_profile_oasis" >> .env
 
       - name: Create Firefox Profile Directory
         run: |
@@ -41,5 +32,4 @@ jobs:
 
       - name: Post to Note.com
         run: |
-          source .venv/bin/activate
-          python tools/note_post.py --folder security-study --firefox-headless 
+          python3 tools/note_post.py --folder security-study --firefox-headless 
