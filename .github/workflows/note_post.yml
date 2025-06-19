@@ -18,6 +18,10 @@ jobs:
         with:
           python-version: '3.12'
 
+      - name: Install OASIS and dependencies
+        run: |
+          pip install oasis-article
+
       - name: Create .env from secrets
         run: |
           echo "NOTE_EMAIL=${{ secrets.NOTE_EMAIL }}" >> .env
