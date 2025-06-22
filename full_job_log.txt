@@ -1,0 +1,768 @@
+post-to-note	Set up job	﻿2025-06-18T15:41:47.5215645Z Current runner version: '2.325.0'
+post-to-note	Set up job	2025-06-18T15:41:47.5243063Z ##[group]Runner Image Provisioner
+post-to-note	Set up job	2025-06-18T15:41:47.5243921Z Hosted Compute Agent
+post-to-note	Set up job	2025-06-18T15:41:47.5244717Z Version: 20250617.347
+post-to-note	Set up job	2025-06-18T15:41:47.5245368Z Commit: a94982a9c1baf5723aa59f6acd00bd3c220e8de7
+post-to-note	Set up job	2025-06-18T15:41:47.5246080Z Build Date: 2025-06-17T13:43:39Z
+post-to-note	Set up job	2025-06-18T15:41:47.5246777Z ##[endgroup]
+post-to-note	Set up job	2025-06-18T15:41:47.5247318Z ##[group]Operating System
+post-to-note	Set up job	2025-06-18T15:41:47.5247881Z Ubuntu
+post-to-note	Set up job	2025-06-18T15:41:47.5248441Z 24.04.2
+post-to-note	Set up job	2025-06-18T15:41:47.5248927Z LTS
+post-to-note	Set up job	2025-06-18T15:41:47.5249477Z ##[endgroup]
+post-to-note	Set up job	2025-06-18T15:41:47.5250057Z ##[group]Runner Image
+post-to-note	Set up job	2025-06-18T15:41:47.5250633Z Image: ubuntu-24.04
+post-to-note	Set up job	2025-06-18T15:41:47.5251190Z Version: 20250602.3.0
+post-to-note	Set up job	2025-06-18T15:41:47.5252246Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250602.3/images/ubuntu/Ubuntu2404-Readme.md
+post-to-note	Set up job	2025-06-18T15:41:47.5253653Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250602.3
+post-to-note	Set up job	2025-06-18T15:41:47.5255281Z ##[endgroup]
+post-to-note	Set up job	2025-06-18T15:41:47.5257828Z ##[group]GITHUB_TOKEN Permissions
+post-to-note	Set up job	2025-06-18T15:41:47.5260561Z Actions: write
+post-to-note	Set up job	2025-06-18T15:41:47.5261437Z Attestations: write
+post-to-note	Set up job	2025-06-18T15:41:47.5262020Z Checks: write
+post-to-note	Set up job	2025-06-18T15:41:47.5262508Z Contents: write
+post-to-note	Set up job	2025-06-18T15:41:47.5263093Z Deployments: write
+post-to-note	Set up job	2025-06-18T15:41:47.5263696Z Discussions: write
+post-to-note	Set up job	2025-06-18T15:41:47.5264228Z Issues: write
+post-to-note	Set up job	2025-06-18T15:41:47.5265067Z Metadata: read
+post-to-note	Set up job	2025-06-18T15:41:47.5265590Z Models: read
+post-to-note	Set up job	2025-06-18T15:41:47.5266091Z Packages: write
+post-to-note	Set up job	2025-06-18T15:41:47.5266710Z Pages: write
+post-to-note	Set up job	2025-06-18T15:41:47.5267281Z PullRequests: write
+post-to-note	Set up job	2025-06-18T15:41:47.5267882Z RepositoryProjects: write
+post-to-note	Set up job	2025-06-18T15:41:47.5268496Z SecurityEvents: write
+post-to-note	Set up job	2025-06-18T15:41:47.5269173Z Statuses: write
+post-to-note	Set up job	2025-06-18T15:41:47.5269754Z ##[endgroup]
+post-to-note	Set up job	2025-06-18T15:41:47.5272023Z Secret source: Actions
+post-to-note	Set up job	2025-06-18T15:41:47.5272776Z Prepare workflow directory
+post-to-note	Set up job	2025-06-18T15:41:47.5615814Z Prepare all required actions
+post-to-note	Set up job	2025-06-18T15:41:47.5655444Z Getting action download info
+post-to-note	Set up job	2025-06-18T15:41:47.8733376Z ##[group]Download immutable action package 'actions/checkout@v4'
+post-to-note	Set up job	2025-06-18T15:41:47.8734788Z Version: 4.2.2
+post-to-note	Set up job	2025-06-18T15:41:47.8735830Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+post-to-note	Set up job	2025-06-18T15:41:47.8736991Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+post-to-note	Set up job	2025-06-18T15:41:47.8737822Z ##[endgroup]
+post-to-note	Set up job	2025-06-18T15:41:47.9587954Z ##[group]Download immutable action package 'actions/setup-python@v5'
+post-to-note	Set up job	2025-06-18T15:41:47.9588875Z Version: 5.6.0
+post-to-note	Set up job	2025-06-18T15:41:47.9589690Z Digest: sha256:0b35a0c11c97499e4e0576589036d450b9f5f9da74b7774225b3614b57324404
+post-to-note	Set up job	2025-06-18T15:41:47.9590658Z Source commit SHA: a26af69be951a213d495a4c3e4e4022e16d87065
+post-to-note	Set up job	2025-06-18T15:41:47.9591433Z ##[endgroup]
+post-to-note	Set up job	2025-06-18T15:41:48.2758860Z Complete job name: post-to-note
+post-to-note	Checkout repository	﻿2025-06-18T15:41:48.3452406Z ##[group]Run actions/checkout@v4
+post-to-note	Checkout repository	2025-06-18T15:41:48.3453272Z with:
+post-to-note	Checkout repository	2025-06-18T15:41:48.3453698Z   repository: centervil/Docs-Study
+post-to-note	Checkout repository	2025-06-18T15:41:48.3454598Z   token: ***
+post-to-note	Checkout repository	2025-06-18T15:41:48.3455010Z   ssh-strict: true
+post-to-note	Checkout repository	2025-06-18T15:41:48.3455714Z   ssh-user: git
+post-to-note	Checkout repository	2025-06-18T15:41:48.3456142Z   persist-credentials: true
+post-to-note	Checkout repository	2025-06-18T15:41:48.3456606Z   clean: true
+post-to-note	Checkout repository	2025-06-18T15:41:48.3457023Z   sparse-checkout-cone-mode: true
+post-to-note	Checkout repository	2025-06-18T15:41:48.3457524Z   fetch-depth: 1
+post-to-note	Checkout repository	2025-06-18T15:41:48.3457933Z   fetch-tags: false
+post-to-note	Checkout repository	2025-06-18T15:41:48.3458355Z   show-progress: true
+post-to-note	Checkout repository	2025-06-18T15:41:48.3458777Z   lfs: false
+post-to-note	Checkout repository	2025-06-18T15:41:48.3459170Z   submodules: false
+post-to-note	Checkout repository	2025-06-18T15:41:48.3459593Z   set-safe-directory: true
+post-to-note	Checkout repository	2025-06-18T15:41:48.3460318Z ##[endgroup]
+post-to-note	Checkout repository	2025-06-18T15:41:48.4577863Z Syncing repository: centervil/Docs-Study
+post-to-note	Checkout repository	2025-06-18T15:41:48.4580706Z ##[group]Getting Git version info
+post-to-note	Checkout repository	2025-06-18T15:41:48.4582009Z Working directory is '/home/runner/work/Docs-Study/Docs-Study'
+post-to-note	Checkout repository	2025-06-18T15:41:48.4583830Z [command]/usr/bin/git version
+post-to-note	Checkout repository	2025-06-18T15:41:48.4620060Z git version 2.49.0
+post-to-note	Checkout repository	2025-06-18T15:41:48.4647809Z ##[endgroup]
+post-to-note	Checkout repository	2025-06-18T15:41:48.4665038Z Temporarily overriding HOME='/home/runner/work/_temp/ef929f69-1b74-4106-b916-54d77621a082' before making global git config changes
+post-to-note	Checkout repository	2025-06-18T15:41:48.4667861Z Adding repository directory to the temporary git global config as a safe directory
+post-to-note	Checkout repository	2025-06-18T15:41:48.4672229Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Docs-Study/Docs-Study
+post-to-note	Checkout repository	2025-06-18T15:41:48.4721144Z Deleting the contents of '/home/runner/work/Docs-Study/Docs-Study'
+post-to-note	Checkout repository	2025-06-18T15:41:48.4725652Z ##[group]Initializing the repository
+post-to-note	Checkout repository	2025-06-18T15:41:48.4730591Z [command]/usr/bin/git init /home/runner/work/Docs-Study/Docs-Study
+post-to-note	Checkout repository	2025-06-18T15:41:48.4805582Z hint: Using 'master' as the name for the initial branch. This default branch name
+post-to-note	Checkout repository	2025-06-18T15:41:48.4806929Z hint: is subject to change. To configure the initial branch name to use in all
+post-to-note	Checkout repository	2025-06-18T15:41:48.4808343Z hint: of your new repositories, which will suppress this warning, call:
+post-to-note	Checkout repository	2025-06-18T15:41:48.4809316Z hint:
+post-to-note	Checkout repository	2025-06-18T15:41:48.4809963Z hint: 	git config --global init.defaultBranch <name>
+post-to-note	Checkout repository	2025-06-18T15:41:48.4811038Z hint:
+post-to-note	Checkout repository	2025-06-18T15:41:48.4812094Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+post-to-note	Checkout repository	2025-06-18T15:41:48.4813753Z hint: 'development'. The just-created branch can be renamed via this command:
+post-to-note	Checkout repository	2025-06-18T15:41:48.4815293Z hint:
+post-to-note	Checkout repository	2025-06-18T15:41:48.4816066Z hint: 	git branch -m <name>
+post-to-note	Checkout repository	2025-06-18T15:41:48.4817389Z Initialized empty Git repository in /home/runner/work/Docs-Study/Docs-Study/.git/
+post-to-note	Checkout repository	2025-06-18T15:41:48.4823442Z [command]/usr/bin/git remote add origin https://github.com/centervil/Docs-Study
+post-to-note	Checkout repository	2025-06-18T15:41:48.4858008Z ##[endgroup]
+post-to-note	Checkout repository	2025-06-18T15:41:48.4859269Z ##[group]Disabling automatic garbage collection
+post-to-note	Checkout repository	2025-06-18T15:41:48.4863148Z [command]/usr/bin/git config --local gc.auto 0
+post-to-note	Checkout repository	2025-06-18T15:41:48.4893549Z ##[endgroup]
+post-to-note	Checkout repository	2025-06-18T15:41:48.4895124Z ##[group]Setting up auth
+post-to-note	Checkout repository	2025-06-18T15:41:48.4901604Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+post-to-note	Checkout repository	2025-06-18T15:41:48.4937009Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+post-to-note	Checkout repository	2025-06-18T15:41:48.5230031Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+post-to-note	Checkout repository	2025-06-18T15:41:48.5266357Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+post-to-note	Checkout repository	2025-06-18T15:41:48.5519597Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+post-to-note	Checkout repository	2025-06-18T15:41:48.5562044Z ##[endgroup]
+post-to-note	Checkout repository	2025-06-18T15:41:48.5562999Z ##[group]Fetching the repository
+post-to-note	Checkout repository	2025-06-18T15:41:48.5576109Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +5bbd03f09015a47e0f154350925c3953f6451217:refs/remotes/origin/main
+post-to-note	Checkout repository	2025-06-18T15:41:48.9839472Z From https://github.com/centervil/Docs-Study
+post-to-note	Checkout repository	2025-06-18T15:41:48.9841298Z  * [new ref]         5bbd03f09015a47e0f154350925c3953f6451217 -> origin/main
+post-to-note	Checkout repository	2025-06-18T15:41:48.9869259Z ##[endgroup]
+post-to-note	Checkout repository	2025-06-18T15:41:48.9870691Z ##[group]Determining the checkout info
+post-to-note	Checkout repository	2025-06-18T15:41:48.9872471Z ##[endgroup]
+post-to-note	Checkout repository	2025-06-18T15:41:48.9877782Z [command]/usr/bin/git sparse-checkout disable
+post-to-note	Checkout repository	2025-06-18T15:41:48.9927119Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+post-to-note	Checkout repository	2025-06-18T15:41:48.9959681Z ##[group]Checking out the ref
+post-to-note	Checkout repository	2025-06-18T15:41:48.9963875Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+post-to-note	Checkout repository	2025-06-18T15:41:49.0125213Z Switched to a new branch 'main'
+post-to-note	Checkout repository	2025-06-18T15:41:49.0126767Z branch 'main' set up to track 'origin/main'.
+post-to-note	Checkout repository	2025-06-18T15:41:49.0132404Z ##[endgroup]
+post-to-note	Checkout repository	2025-06-18T15:41:49.0171095Z [command]/usr/bin/git log -1 --format=%H
+post-to-note	Checkout repository	2025-06-18T15:41:49.0194756Z 5bbd03f09015a47e0f154350925c3953f6451217
+post-to-note	Set up Python	﻿2025-06-18T15:41:49.0501808Z ##[group]Run actions/setup-python@v5
+post-to-note	Set up Python	2025-06-18T15:41:49.0503235Z with:
+post-to-note	Set up Python	2025-06-18T15:41:49.0504034Z   python-version: 3.12
+post-to-note	Set up Python	2025-06-18T15:41:49.0505193Z   check-latest: false
+post-to-note	Set up Python	2025-06-18T15:41:49.0506395Z   token: ***
+post-to-note	Set up Python	2025-06-18T15:41:49.0507235Z   update-environment: true
+post-to-note	Set up Python	2025-06-18T15:41:49.0508280Z   allow-prereleases: false
+post-to-note	Set up Python	2025-06-18T15:41:49.0509279Z   freethreaded: false
+post-to-note	Set up Python	2025-06-18T15:41:49.0510166Z ##[endgroup]
+post-to-note	Set up Python	2025-06-18T15:41:49.2215394Z ##[group]Installed versions
+post-to-note	Set up Python	2025-06-18T15:41:49.2347810Z Successfully set up CPython (3.12.10)
+post-to-note	Set up Python	2025-06-18T15:41:49.2350511Z ##[endgroup]
+post-to-note	Set up venv and install dependencies	﻿2025-06-18T15:41:49.2493474Z ##[group]Run python -m venv .venv
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:49.2495388Z [36;1mpython -m venv .venv[0m
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:49.2497113Z [36;1msource .venv/bin/activate[0m
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:49.2498879Z [36;1mpip install -U pip[0m
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:49.2500678Z [36;1mpip install oasis-article[0m
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:49.2583840Z shell: /usr/bin/bash -e {0}
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:49.2585172Z env:
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:49.2586312Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.10/x64
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:49.2587989Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.10/x64/lib/pkgconfig
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:49.2589585Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.10/x64
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:49.2591040Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.10/x64
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:49.2592512Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.10/x64
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:49.2593971Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.10/x64/lib
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:49.2595446Z ##[endgroup]
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:52.6298364Z Requirement already satisfied: pip in ./.venv/lib/python3.12/site-packages (25.0.1)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:52.8894212Z Collecting pip
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:52.9354649Z   Downloading pip-25.1.1-py3-none-any.whl.metadata (3.6 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:52.9479590Z Downloading pip-25.1.1-py3-none-any.whl (1.8 MB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:53.0302304Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 26.5 MB/s eta 0:00:00
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:53.0445661Z Installing collected packages: pip
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:53.0446653Z   Attempting uninstall: pip
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:53.0470721Z     Found existing installation: pip 25.0.1
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:53.0848079Z     Uninstalling pip-25.0.1:
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:53.0909890Z       Successfully uninstalled pip-25.0.1
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:54.0904212Z Successfully installed pip-25.1.1
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:54.7020933Z Collecting oasis-article
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:54.7473751Z   Downloading oasis_article-0.9.2-py3-none-any.whl.metadata (10 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:54.7887329Z Collecting requests (from oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:54.7960503Z   Downloading requests-2.32.4-py3-none-any.whl.metadata (4.9 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:54.8205304Z Collecting python-dotenv (from oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:54.8286748Z   Downloading python_dotenv-1.1.0-py3-none-any.whl.metadata (24 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:54.9890468Z Collecting matplotlib (from oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:54.9969025Z   Downloading matplotlib-3.10.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (11 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:55.0170929Z Collecting japanize-matplotlib (from oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:55.0261733Z   Downloading japanize-matplotlib-1.1.3.tar.gz (4.1 MB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:55.0728632Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.1/4.1 MB 130.0 MB/s eta 0:00:00
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:55.1584726Z   Installing build dependencies: started
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:56.0612312Z   Installing build dependencies: finished with status 'done'
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:56.0618477Z   Getting requirements to build wheel: started
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:56.5525159Z   Getting requirements to build wheel: finished with status 'done'
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:56.5535415Z   Preparing metadata (pyproject.toml): started
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:56.7589063Z   Preparing metadata (pyproject.toml): finished with status 'done'
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:56.9372164Z Collecting numpy (from oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:56.9452177Z   Downloading numpy-2.3.0-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (62 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:56.9808079Z Collecting tenacity (from oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:56.9884085Z   Downloading tenacity-9.1.2-py3-none-any.whl.metadata (1.2 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:57.1935051Z Collecting litellm (from oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:57.2012614Z   Downloading litellm-1.72.6.post1-py3-none-any.whl.metadata (39 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:57.2271454Z Collecting loguru (from oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:57.2344273Z   Downloading loguru-0.7.3-py3-none-any.whl.metadata (22 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:57.2655984Z Collecting click (from oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:57.2731475Z   Downloading click-8.2.1-py3-none-any.whl.metadata (2.5 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:57.2981929Z Collecting art (from oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:57.3061622Z   Downloading art-6.5-py3-none-any.whl.metadata (72 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:57.3517128Z Collecting selenium>=4.12.0 (from oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:57.3596103Z   Downloading selenium-4.33.0-py3-none-any.whl.metadata (7.5 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:57.3778018Z Collecting janome>=0.5.0 (from oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:57.3860327Z   Downloading Janome-0.5.0-py2.py3-none-any.whl.metadata (2.6 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:57.4090436Z Collecting markdown (from oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:57.4171655Z   Downloading markdown-3.8.1-py3-none-any.whl.metadata (5.1 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:57.4418199Z Collecting beautifulsoup4 (from oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:57.4495840Z   Downloading beautifulsoup4-4.13.4-py3-none-any.whl.metadata (3.8 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:57.4748097Z Collecting webdriver-manager (from oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:57.4824038Z   Downloading webdriver_manager-4.0.2-py2.py3-none-any.whl.metadata (12 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:57.5058404Z Collecting mistune (from oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:57.5137321Z   Downloading mistune-3.1.3-py3-none-any.whl.metadata (1.8 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:57.5309733Z Collecting html2text (from oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:57.5382906Z   Downloading html2text-2025.4.15-py3-none-any.whl.metadata (4.1 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:57.5900393Z Collecting streamlit (from oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:57.5975138Z   Downloading streamlit-1.46.0-py3-none-any.whl.metadata (9.0 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:57.6325720Z Collecting urllib3~=2.4.0 (from urllib3[socks]~=2.4.0->selenium>=4.12.0->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:57.6415966Z   Downloading urllib3-2.4.0-py3-none-any.whl.metadata (6.5 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:57.6646979Z Collecting trio~=0.30.0 (from selenium>=4.12.0->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:57.6723005Z   Downloading trio-0.30.0-py3-none-any.whl.metadata (8.5 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:57.6909866Z Collecting trio-websocket~=0.12.2 (from selenium>=4.12.0->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:57.6983881Z   Downloading trio_websocket-0.12.2-py3-none-any.whl.metadata (5.1 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:57.7226125Z Collecting certifi>=2025.4.26 (from selenium>=4.12.0->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:57.7299602Z   Downloading certifi-2025.6.15-py3-none-any.whl.metadata (2.4 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:57.7528153Z Collecting typing_extensions~=4.13.2 (from selenium>=4.12.0->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:57.7604737Z   Downloading typing_extensions-4.13.2-py3-none-any.whl.metadata (3.0 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:57.7871049Z Collecting websocket-client~=1.8.0 (from selenium>=4.12.0->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:57.7949665Z   Downloading websocket_client-1.8.0-py3-none-any.whl.metadata (8.0 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:57.8174595Z Collecting attrs>=23.2.0 (from trio~=0.30.0->selenium>=4.12.0->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:57.8249814Z   Downloading attrs-25.3.0-py3-none-any.whl.metadata (10 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:57.8531725Z Collecting sortedcontainers (from trio~=0.30.0->selenium>=4.12.0->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:57.8613198Z   Downloading sortedcontainers-2.4.0-py2.py3-none-any.whl.metadata (10 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:57.8812801Z Collecting idna (from trio~=0.30.0->selenium>=4.12.0->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:57.8885424Z   Downloading idna-3.10-py3-none-any.whl.metadata (10 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:57.9061913Z Collecting outcome (from trio~=0.30.0->selenium>=4.12.0->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:57.9135058Z   Downloading outcome-1.3.0.post0-py2.py3-none-any.whl.metadata (2.6 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:57.9285513Z Collecting sniffio>=1.3.0 (from trio~=0.30.0->selenium>=4.12.0->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:57.9372347Z   Downloading sniffio-1.3.1-py3-none-any.whl.metadata (3.9 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:57.9609113Z Collecting wsproto>=0.14 (from trio-websocket~=0.12.2->selenium>=4.12.0->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:57.9681170Z   Downloading wsproto-1.2.0-py3-none-any.whl.metadata (5.6 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:57.9877399Z Collecting pysocks!=1.5.7,<2.0,>=1.5.6 (from urllib3[socks]~=2.4.0->selenium>=4.12.0->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:57.9950508Z   Downloading PySocks-1.7.1-py3-none-any.whl.metadata (13 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:58.0226044Z Collecting h11<1,>=0.9.0 (from wsproto>=0.14->trio-websocket~=0.12.2->selenium>=4.12.0->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:58.0297307Z   Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:58.0566804Z Collecting soupsieve>1.2 (from beautifulsoup4->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:58.0642399Z   Downloading soupsieve-2.7-py3-none-any.whl.metadata (4.6 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:58.5941974Z Collecting aiohttp (from litellm->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:58.6024194Z   Downloading aiohttp-3.12.13-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (7.6 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:58.6296768Z Collecting httpx>=0.23.0 (from litellm->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:58.6374139Z   Downloading httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:58.6744746Z Collecting importlib-metadata>=6.8.0 (from litellm->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:58.6821762Z   Downloading importlib_metadata-8.7.0-py3-none-any.whl.metadata (4.8 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:58.7076328Z Collecting jinja2<4.0.0,>=3.1.2 (from litellm->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:58.7150901Z   Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:58.7471923Z Collecting jsonschema<5.0.0,>=4.22.0 (from litellm->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:58.7545608Z   Downloading jsonschema-4.24.0-py3-none-any.whl.metadata (7.8 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:58.8106586Z Collecting openai>=1.68.2 (from litellm->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:58.8178955Z   Downloading openai-1.88.0-py3-none-any.whl.metadata (25 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:58.9809556Z Collecting pydantic<3.0.0,>=2.0.0 (from litellm->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:58.9884650Z   Downloading pydantic-2.11.7-py3-none-any.whl.metadata (67 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:59.0330937Z Collecting tiktoken>=0.7.0 (from litellm->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:59.0404907Z   Downloading tiktoken-0.9.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.7 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:59.2054158Z Collecting tokenizers (from litellm->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:59.2133381Z   Downloading tokenizers-0.21.1-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.8 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:59.2726216Z Collecting MarkupSafe>=2.0 (from jinja2<4.0.0,>=3.1.2->litellm->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:59.2805014Z   Downloading MarkupSafe-3.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.0 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:59.3048329Z Collecting jsonschema-specifications>=2023.03.6 (from jsonschema<5.0.0,>=4.22.0->litellm->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:59.3124884Z   Downloading jsonschema_specifications-2025.4.1-py3-none-any.whl.metadata (2.9 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:59.3441171Z Collecting referencing>=0.28.4 (from jsonschema<5.0.0,>=4.22.0->litellm->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:59.3516135Z   Downloading referencing-0.36.2-py3-none-any.whl.metadata (2.8 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:59.6005537Z Collecting rpds-py>=0.7.1 (from jsonschema<5.0.0,>=4.22.0->litellm->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:59.6084641Z   Downloading rpds_py-0.25.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.1 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:59.6374151Z Collecting annotated-types>=0.6.0 (from pydantic<3.0.0,>=2.0.0->litellm->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:41:59.6451444Z   Downloading annotated_types-0.7.0-py3-none-any.whl.metadata (15 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:00.3042592Z Collecting pydantic-core==2.33.2 (from pydantic<3.0.0,>=2.0.0->litellm->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:00.3123147Z   Downloading pydantic_core-2.33.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.8 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:00.3329482Z Collecting typing-inspection>=0.4.0 (from pydantic<3.0.0,>=2.0.0->litellm->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:00.3402095Z   Downloading typing_inspection-0.4.1-py3-none-any.whl.metadata (2.6 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:00.3726224Z Collecting anyio (from httpx>=0.23.0->litellm->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:00.3797468Z   Downloading anyio-4.9.0-py3-none-any.whl.metadata (4.7 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:00.4073629Z Collecting httpcore==1.* (from httpx>=0.23.0->litellm->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:00.4147857Z   Downloading httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:00.4450571Z Collecting zipp>=3.20 (from importlib-metadata>=6.8.0->litellm->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:00.4523918Z   Downloading zipp-3.23.0-py3-none-any.whl.metadata (3.6 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:00.4881989Z Collecting distro<2,>=1.7.0 (from openai>=1.68.2->litellm->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:00.4956676Z   Downloading distro-1.9.0-py3-none-any.whl.metadata (6.8 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:00.5700559Z Collecting jiter<1,>=0.4.0 (from openai>=1.68.2->litellm->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:00.5777378Z   Downloading jiter-0.10.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (5.2 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:00.6370977Z Collecting tqdm>4 (from openai>=1.68.2->litellm->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:00.6447016Z   Downloading tqdm-4.67.1-py3-none-any.whl.metadata (57 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:01.0601016Z Collecting regex>=2022.1.18 (from tiktoken>=0.7.0->litellm->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:01.0681969Z   Downloading regex-2024.11.6-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (40 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:01.1620490Z Collecting charset_normalizer<4,>=2 (from requests->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:01.1699731Z   Downloading charset_normalizer-3.4.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (35 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:01.2163664Z Collecting aiohappyeyeballs>=2.5.0 (from aiohttp->litellm->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:01.2240009Z   Downloading aiohappyeyeballs-2.6.1-py3-none-any.whl.metadata (5.9 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:01.2414801Z Collecting aiosignal>=1.1.2 (from aiohttp->litellm->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:01.2488366Z   Downloading aiosignal-1.3.2-py2.py3-none-any.whl.metadata (3.8 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:01.3275147Z Collecting frozenlist>=1.1.1 (from aiohttp->litellm->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:01.3354974Z   Downloading frozenlist-1.7.0-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (18 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:01.5431631Z Collecting multidict<7.0,>=4.5 (from aiohttp->litellm->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:01.5509379Z   Downloading multidict-6.5.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (5.3 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:01.6017484Z Collecting propcache>=0.2.0 (from aiohttp->litellm->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:01.6096401Z   Downloading propcache-0.3.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (12 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:01.9541327Z Collecting yarl<2.0,>=1.17.0 (from aiohttp->litellm->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:01.9616993Z   Downloading yarl-1.20.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (73 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:02.0712799Z Collecting contourpy>=1.0.1 (from matplotlib->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:02.0788735Z   Downloading contourpy-1.3.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (5.5 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:02.0971514Z Collecting cycler>=0.10 (from matplotlib->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:02.1046861Z   Downloading cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:02.2497617Z Collecting fonttools>=4.22.0 (from matplotlib->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:02.2583844Z   Downloading fonttools-4.58.4-cp312-cp312-manylinux1_x86_64.manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_5_x86_64.whl.metadata (106 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:02.3304781Z Collecting kiwisolver>=1.3.1 (from matplotlib->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:02.3384323Z   Downloading kiwisolver-1.4.8-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.2 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:02.3701925Z Collecting packaging>=20.0 (from matplotlib->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:02.3786484Z   Downloading packaging-25.0-py3-none-any.whl.metadata (3.3 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:02.5428256Z Collecting pillow>=8 (from matplotlib->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:02.5503717Z   Downloading pillow-11.2.1-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (8.9 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:02.5868674Z Collecting pyparsing>=2.3.1 (from matplotlib->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:02.5945879Z   Downloading pyparsing-3.2.3-py3-none-any.whl.metadata (5.0 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:02.6186228Z Collecting python-dateutil>=2.7 (from matplotlib->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:02.6259485Z   Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:02.6692446Z Collecting six>=1.5 (from python-dateutil>=2.7->matplotlib->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:02.6770730Z   Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:02.7077710Z Collecting altair<6,>=4.0 (from streamlit->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:02.7157949Z   Downloading altair-5.5.0-py3-none-any.whl.metadata (11 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:02.7401568Z Collecting blinker<2,>=1.5.0 (from streamlit->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:02.7476145Z   Downloading blinker-1.9.0-py3-none-any.whl.metadata (1.6 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:02.7717957Z Collecting cachetools<7,>=4.0 (from streamlit->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:02.7794176Z   Downloading cachetools-6.1.0-py3-none-any.whl.metadata (5.4 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:02.9138049Z Collecting pandas<3,>=1.4.0 (from streamlit->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:02.9215648Z   Downloading pandas-2.3.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (91 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:03.2474869Z Collecting protobuf<7,>=3.20 (from streamlit->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:03.2551592Z   Downloading protobuf-6.31.1-cp39-abi3-manylinux2014_x86_64.whl.metadata (593 bytes)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:03.3400521Z Collecting pyarrow>=7.0 (from streamlit->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:03.3480909Z   Downloading pyarrow-20.0.0-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (3.3 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:03.3811738Z Collecting toml<2,>=0.10.1 (from streamlit->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:03.3885857Z   Downloading toml-0.10.2-py2.py3-none-any.whl.metadata (7.1 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:03.4470111Z Collecting watchdog<7,>=2.1.5 (from streamlit->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:03.4556887Z   Downloading watchdog-6.0.0-py3-none-manylinux2014_x86_64.whl.metadata (44 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:03.4944579Z Collecting gitpython!=3.1.19,<4,>=3.0.7 (from streamlit->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:03.5019848Z   Downloading GitPython-3.1.44-py3-none-any.whl.metadata (13 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:03.5289203Z Collecting pydeck<1,>=0.8.0b4 (from streamlit->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:03.5367851Z   Downloading pydeck-0.9.1-py2.py3-none-any.whl.metadata (4.1 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:03.5808108Z Collecting tornado!=6.5.0,<7,>=6.0.3 (from streamlit->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:03.5893208Z   Downloading tornado-6.5.1-cp39-abi3-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.8 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:03.6505080Z Collecting narwhals>=1.14.2 (from altair<6,>=4.0->streamlit->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:03.6580370Z   Downloading narwhals-1.43.0-py3-none-any.whl.metadata (11 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:03.6951243Z Collecting gitdb<5,>=4.0.1 (from gitpython!=3.1.19,<4,>=3.0.7->streamlit->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:03.7025163Z   Downloading gitdb-4.0.12-py3-none-any.whl.metadata (1.2 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:03.7245737Z Collecting smmap<6,>=3.0.1 (from gitdb<5,>=4.0.1->gitpython!=3.1.19,<4,>=3.0.7->streamlit->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:03.7319358Z   Downloading smmap-5.0.2-py3-none-any.whl.metadata (4.3 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:03.7974031Z Collecting pytz>=2020.1 (from pandas<3,>=1.4.0->streamlit->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:03.8064740Z   Downloading pytz-2025.2-py2.py3-none-any.whl.metadata (22 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:03.8295880Z Collecting tzdata>=2022.7 (from pandas<3,>=1.4.0->streamlit->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:03.8373618Z   Downloading tzdata-2025.2-py2.py3-none-any.whl.metadata (1.4 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:03.9342217Z Collecting huggingface-hub<1.0,>=0.16.4 (from tokenizers->litellm->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:03.9422568Z   Downloading huggingface_hub-0.33.0-py3-none-any.whl.metadata (14 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:03.9929901Z Collecting filelock (from huggingface-hub<1.0,>=0.16.4->tokenizers->litellm->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.0006093Z   Downloading filelock-3.18.0-py3-none-any.whl.metadata (2.9 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.0308620Z Collecting fsspec>=2023.5.0 (from huggingface-hub<1.0,>=0.16.4->tokenizers->litellm->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.0386336Z   Downloading fsspec-2025.5.1-py3-none-any.whl.metadata (11 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.1110387Z Collecting pyyaml>=5.1 (from huggingface-hub<1.0,>=0.16.4->tokenizers->litellm->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.1186741Z   Downloading PyYAML-6.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.1 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.1670663Z Collecting hf-xet<2.0.0,>=1.1.2 (from huggingface-hub<1.0,>=0.16.4->tokenizers->litellm->oasis-article)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.1745102Z   Downloading hf_xet-1.1.4-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (879 bytes)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.2086047Z Downloading oasis_article-0.9.2-py3-none-any.whl (43 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.2231672Z Downloading Janome-0.5.0-py2.py3-none-any.whl (19.7 MB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.3308200Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 19.7/19.7 MB 185.6 MB/s eta 0:00:00
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.3389621Z Downloading selenium-4.33.0-py3-none-any.whl (9.4 MB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.3806853Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.4/9.4 MB 236.3 MB/s eta 0:00:00
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.3883216Z Downloading trio-0.30.0-py3-none-any.whl (499 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.4004302Z Downloading trio_websocket-0.12.2-py3-none-any.whl (21 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.4111610Z Downloading typing_extensions-4.13.2-py3-none-any.whl (45 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.4215412Z Downloading urllib3-2.4.0-py3-none-any.whl (128 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.4322496Z Downloading PySocks-1.7.1-py3-none-any.whl (16 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.4421064Z Downloading websocket_client-1.8.0-py3-none-any.whl (58 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.4530135Z Downloading attrs-25.3.0-py3-none-any.whl (63 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.4634297Z Downloading certifi-2025.6.15-py3-none-any.whl (157 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.4743585Z Downloading outcome-1.3.0.post0-py2.py3-none-any.whl (10 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.4846270Z Downloading sniffio-1.3.1-py3-none-any.whl (10 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.4950250Z Downloading wsproto-1.2.0-py3-none-any.whl (24 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.5052369Z Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.5179385Z Downloading art-6.5-py3-none-any.whl (610 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.5252222Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 610.4/610.4 kB 75.5 MB/s eta 0:00:00
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.5331677Z Downloading beautifulsoup4-4.13.4-py3-none-any.whl (187 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.5442996Z Downloading soupsieve-2.7-py3-none-any.whl (36 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.5543262Z Downloading click-8.2.1-py3-none-any.whl (102 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.5646721Z Downloading html2text-2025.4.15-py3-none-any.whl (34 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.5751271Z Downloading idna-3.10-py3-none-any.whl (70 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.5862982Z Downloading litellm-1.72.6.post1-py3-none-any.whl (8.3 MB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.6236997Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.3/8.3 MB 236.4 MB/s eta 0:00:00
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.6311188Z Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.6420294Z Downloading jsonschema-4.24.0-py3-none-any.whl (88 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.6529640Z Downloading pydantic-2.11.7-py3-none-any.whl (444 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.6647856Z Downloading pydantic_core-2.33.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.0 MB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.6768588Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 191.8 MB/s eta 0:00:00
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.6846362Z Downloading annotated_types-0.7.0-py3-none-any.whl (13 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.6951231Z Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.7056240Z Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.7162610Z Downloading importlib_metadata-8.7.0-py3-none-any.whl (27 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.7271651Z Downloading jsonschema_specifications-2025.4.1-py3-none-any.whl (18 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.7376039Z Downloading MarkupSafe-3.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (23 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.7475419Z Downloading openai-1.88.0-py3-none-any.whl (734 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.7552334Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 734.3/734.3 kB 103.8 MB/s eta 0:00:00
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.7625385Z Downloading anyio-4.9.0-py3-none-any.whl (100 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.7728168Z Downloading distro-1.9.0-py3-none-any.whl (20 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.7866805Z Downloading jiter-0.10.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (352 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.7978217Z Downloading python_dotenv-1.1.0-py3-none-any.whl (20 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.8079183Z Downloading referencing-0.36.2-py3-none-any.whl (26 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.8186522Z Downloading rpds_py-0.25.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (390 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.8314255Z Downloading tiktoken-0.9.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.2 MB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.8415843Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 131.0 MB/s eta 0:00:00
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.8495122Z Downloading regex-2024.11.6-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (796 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.8577084Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 796.9/796.9 kB 111.0 MB/s eta 0:00:00
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.8653715Z Downloading requests-2.32.4-py3-none-any.whl (64 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.8762331Z Downloading charset_normalizer-3.4.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (148 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.8869761Z Downloading tqdm-4.67.1-py3-none-any.whl (78 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.8974543Z Downloading typing_inspection-0.4.1-py3-none-any.whl (14 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.9078511Z Downloading zipp-3.23.0-py3-none-any.whl (10 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.9182669Z Downloading aiohttp-3.12.13-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.7 MB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.9302784Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 160.2 MB/s eta 0:00:00
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.9384572Z Downloading multidict-6.5.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (237 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.9500678Z Downloading yarl-1.20.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (355 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.9627830Z Downloading aiohappyeyeballs-2.6.1-py3-none-any.whl (15 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.9729955Z Downloading aiosignal-1.3.2-py2.py3-none-any.whl (7.6 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.9831777Z Downloading frozenlist-1.7.0-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (241 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:04.9943520Z Downloading propcache-0.3.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (224 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:05.0056708Z Downloading loguru-0.7.3-py3-none-any.whl (61 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:05.0161921Z Downloading markdown-3.8.1-py3-none-any.whl (106 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:05.0274646Z Downloading matplotlib-3.10.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (8.6 MB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:05.0703857Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.6/8.6 MB 210.6 MB/s eta 0:00:00
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:05.0781210Z Downloading contourpy-1.3.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (323 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:05.0897905Z Downloading cycler-0.12.1-py3-none-any.whl (8.3 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:05.1012735Z Downloading fonttools-4.58.4-cp312-cp312-manylinux1_x86_64.manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_5_x86_64.whl (4.9 MB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:05.1277858Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.9/4.9 MB 202.4 MB/s eta 0:00:00
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:05.1359786Z Downloading kiwisolver-1.4.8-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.5 MB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:05.1476433Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 148.3 MB/s eta 0:00:00
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:05.1555350Z Downloading numpy-2.3.0-cp312-cp312-manylinux_2_28_x86_64.whl (16.6 MB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:05.2313025Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.6/16.6 MB 226.7 MB/s eta 0:00:00
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:05.2388569Z Downloading packaging-25.0-py3-none-any.whl (66 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:05.2494245Z Downloading pillow-11.2.1-cp312-cp312-manylinux_2_28_x86_64.whl (4.6 MB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:05.2731825Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.6/4.6 MB 218.8 MB/s eta 0:00:00
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:05.2814771Z Downloading pyparsing-3.2.3-py3-none-any.whl (111 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:05.2940305Z Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:05.3049877Z Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:05.3151226Z Downloading mistune-3.1.3-py3-none-any.whl (53 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:05.3249533Z Downloading sortedcontainers-2.4.0-py2.py3-none-any.whl (29 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:05.3358465Z Downloading streamlit-1.46.0-py3-none-any.whl (10.1 MB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:05.3813674Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.1/10.1 MB 232.7 MB/s eta 0:00:00
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:05.3897473Z Downloading altair-5.5.0-py3-none-any.whl (731 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:05.3972073Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 731.2/731.2 kB 104.0 MB/s eta 0:00:00
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:05.4048419Z Downloading blinker-1.9.0-py3-none-any.whl (8.5 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:05.4150979Z Downloading cachetools-6.1.0-py3-none-any.whl (11 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:05.4255531Z Downloading GitPython-3.1.44-py3-none-any.whl (207 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:05.4366743Z Downloading gitdb-4.0.12-py3-none-any.whl (62 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:05.4480524Z Downloading pandas-2.3.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.0 MB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:05.5045959Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.0/12.0 MB 220.2 MB/s eta 0:00:00
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:05.5123673Z Downloading protobuf-6.31.1-cp39-abi3-manylinux2014_x86_64.whl (321 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:05.5245099Z Downloading pydeck-0.9.1-py2.py3-none-any.whl (6.9 MB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:05.5589905Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.9/6.9 MB 214.4 MB/s eta 0:00:00
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:05.5665112Z Downloading smmap-5.0.2-py3-none-any.whl (24 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:05.5770625Z Downloading tenacity-9.1.2-py3-none-any.whl (28 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:05.5881471Z Downloading toml-0.10.2-py2.py3-none-any.whl (16 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:05.5980195Z Downloading tornado-6.5.1-cp39-abi3-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (443 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:05.6103632Z Downloading watchdog-6.0.0-py3-none-manylinux2014_x86_64.whl (79 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:05.6219067Z Downloading narwhals-1.43.0-py3-none-any.whl (362 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:05.6352844Z Downloading pyarrow-20.0.0-cp312-cp312-manylinux_2_28_x86_64.whl (42.3 MB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:05.8181658Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 42.3/42.3 MB 234.8 MB/s eta 0:00:00
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:05.8257925Z Downloading pytz-2025.2-py2.py3-none-any.whl (509 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:05.8385775Z Downloading tzdata-2025.2-py2.py3-none-any.whl (347 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:05.8507321Z Downloading tokenizers-0.21.1-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.0 MB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:05.8689921Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.0/3.0 MB 186.6 MB/s eta 0:00:00
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:05.8768402Z Downloading huggingface_hub-0.33.0-py3-none-any.whl (514 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:05.8898054Z Downloading hf_xet-1.1.4-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.1 MB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:05.9081339Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.1/3.1 MB 186.8 MB/s eta 0:00:00
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:05.9160360Z Downloading fsspec-2025.5.1-py3-none-any.whl (199 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:05.9273490Z Downloading PyYAML-6.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (767 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:05.9356854Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 767.5/767.5 kB 99.3 MB/s eta 0:00:00
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:05.9431747Z Downloading filelock-3.18.0-py3-none-any.whl (16 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:05.9531821Z Downloading webdriver_manager-4.0.2-py2.py3-none-any.whl (27 kB)
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:06.1882625Z Building wheels for collected packages: japanize-matplotlib
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:06.1892799Z   Building wheel for japanize-matplotlib (pyproject.toml): started
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:06.6854993Z   Building wheel for japanize-matplotlib (pyproject.toml): finished with status 'done'
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:06.6893062Z   Created wheel for japanize-matplotlib: filename=japanize_matplotlib-1.1.3-py3-none-any.whl size=4120306 sha256=e840e38836b6af32b467ed5230e8a07aca9cf64d0e8ff920c60c5c7fe4770097
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:06.6895414Z   Stored in directory: /home/runner/.cache/pip/wheels/c1/f7/9b/418f19a7b9340fc16e071e89efc379aca68d40238b258df53d
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:06.6914309Z Successfully built japanize-matplotlib
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:06.9070750Z Installing collected packages: sortedcontainers, pytz, janome, zipp, websocket-client, watchdog, urllib3, tzdata, typing_extensions, tqdm, tornado, toml, tenacity, soupsieve, sniffio, smmap, six, rpds-py, regex, pyyaml, python-dotenv, pysocks, pyparsing, pyarrow, protobuf, propcache, pillow, packaging, numpy, narwhals, multidict, mistune, MarkupSafe, markdown, loguru, kiwisolver, jiter, idna, html2text, hf-xet, h11, fsspec, frozenlist, fonttools, filelock, distro, cycler, click, charset_normalizer, certifi, cachetools, blinker, attrs, art, annotated-types, aiohappyeyeballs, yarl, wsproto, typing-inspection, requests, referencing, python-dateutil, pydantic-core, outcome, jinja2, importlib-metadata, httpcore, gitdb, contourpy, beautifulsoup4, anyio, aiosignal, webdriver-manager, trio, tiktoken, pydeck, pydantic, pandas, matplotlib, jsonschema-specifications, huggingface-hub, httpx, gitpython, aiohttp, trio-websocket, tokenizers, openai, jsonschema, japanize-matplotlib, selenium, litellm, altair, streamlit, oasis-article
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:45.2588115Z 
+post-to-note	Set up venv and install dependencies	2025-06-18T15:42:45.2678211Z Successfully installed MarkupSafe-3.0.2 aiohappyeyeballs-2.6.1 aiohttp-3.12.13 aiosignal-1.3.2 altair-5.5.0 annotated-types-0.7.0 anyio-4.9.0 art-6.5 attrs-25.3.0 beautifulsoup4-4.13.4 blinker-1.9.0 cachetools-6.1.0 certifi-2025.6.15 charset_normalizer-3.4.2 click-8.2.1 contourpy-1.3.2 cycler-0.12.1 distro-1.9.0 filelock-3.18.0 fonttools-4.58.4 frozenlist-1.7.0 fsspec-2025.5.1 gitdb-4.0.12 gitpython-3.1.44 h11-0.16.0 hf-xet-1.1.4 html2text-2025.4.15 httpcore-1.0.9 httpx-0.28.1 huggingface-hub-0.33.0 idna-3.10 importlib-metadata-8.7.0 janome-0.5.0 japanize-matplotlib-1.1.3 jinja2-3.1.6 jiter-0.10.0 jsonschema-4.24.0 jsonschema-specifications-2025.4.1 kiwisolver-1.4.8 litellm-1.72.6.post1 loguru-0.7.3 markdown-3.8.1 matplotlib-3.10.3 mistune-3.1.3 multidict-6.5.0 narwhals-1.43.0 numpy-2.3.0 oasis-article-0.9.2 openai-1.88.0 outcome-1.3.0.post0 packaging-25.0 pandas-2.3.0 pillow-11.2.1 propcache-0.3.2 protobuf-6.31.1 pyarrow-20.0.0 pydantic-2.11.7 pydantic-core-2.33.2 pydeck-0.9.1 pyparsing-3.2.3 pysocks-1.7.1 python-dateutil-2.9.0.post0 python-dotenv-1.1.0 pytz-2025.2 pyyaml-6.0.2 referencing-0.36.2 regex-2024.11.6 requests-2.32.4 rpds-py-0.25.1 selenium-4.33.0 six-1.17.0 smmap-5.0.2 sniffio-1.3.1 sortedcontainers-2.4.0 soupsieve-2.7 streamlit-1.46.0 tenacity-9.1.2 tiktoken-0.9.0 tokenizers-0.21.1 toml-0.10.2 tornado-6.5.1 tqdm-4.67.1 trio-0.30.0 trio-websocket-0.12.2 typing-inspection-0.4.1 typing_extensions-4.13.2 tzdata-2025.2 urllib3-2.4.0 watchdog-6.0.0 webdriver-manager-4.0.2 websocket-client-1.8.0 wsproto-1.2.0 yarl-1.20.1 zipp-3.23.0
+post-to-note	Create .env from secrets	﻿2025-06-18T15:42:46.6284153Z ##[group]Run echo "NOTE_EMAIL=***" >> .env
+post-to-note	Create .env from secrets	2025-06-18T15:42:46.6284869Z [36;1mecho "NOTE_EMAIL=***" >> .env[0m
+post-to-note	Create .env from secrets	2025-06-18T15:42:46.6285195Z [36;1mecho "NOTE_PASSWORD=***" >> .env[0m
+post-to-note	Create .env from secrets	2025-06-18T15:42:46.6285515Z [36;1mecho "NOTE_USER_ID=***" >> .env[0m
+post-to-note	Create .env from secrets	2025-06-18T15:42:46.6286298Z [36;1mif [ -n "***" ]; then echo "GEMINI_API_KEY=***" >> .env; else echo "[WARNING] GEMINI_API_KEY is not set."; fi[0m
+post-to-note	Create .env from secrets	2025-06-18T15:42:46.6287120Z [36;1mif [ -n "***" ]; then echo "LLM_MODEL=***" >> .env; else echo "[WARNING] LLM_MODEL is not set."; fi[0m
+post-to-note	Create .env from secrets	2025-06-18T15:42:46.6287563Z [36;1mecho "FIREFOX_BINARY_PATH=/usr/bin/firefox" >> .env[0m
+post-to-note	Create .env from secrets	2025-06-18T15:42:46.6288074Z [36;1mecho "FIREFOX_PROFILE_PATH=/home/runner/work/Docs-Study/Docs-Study/.firefox_profile_oasis" >> .env[0m
+post-to-note	Create .env from secrets	2025-06-18T15:42:46.6341968Z shell: /usr/bin/bash -e {0}
+post-to-note	Create .env from secrets	2025-06-18T15:42:46.6342226Z env:
+post-to-note	Create .env from secrets	2025-06-18T15:42:46.6342488Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.10/x64
+post-to-note	Create .env from secrets	2025-06-18T15:42:46.6342911Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.10/x64/lib/pkgconfig
+post-to-note	Create .env from secrets	2025-06-18T15:42:46.6343354Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.10/x64
+post-to-note	Create .env from secrets	2025-06-18T15:42:46.6343735Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.10/x64
+post-to-note	Create .env from secrets	2025-06-18T15:42:46.6344107Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.10/x64
+post-to-note	Create .env from secrets	2025-06-18T15:42:46.6344779Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.10/x64/lib
+post-to-note	Create .env from secrets	2025-06-18T15:42:46.6345094Z ##[endgroup]
+post-to-note	Create Firefox Profile Directory	﻿2025-06-18T15:42:46.6455951Z ##[group]Run mkdir -p /home/runner/work/Docs-Study/Docs-Study/.firefox_profile_oasis
+post-to-note	Create Firefox Profile Directory	2025-06-18T15:42:46.6456559Z [36;1mmkdir -p /home/runner/work/Docs-Study/Docs-Study/.firefox_profile_oasis[0m
+post-to-note	Create Firefox Profile Directory	2025-06-18T15:42:46.6509284Z shell: /usr/bin/bash -e {0}
+post-to-note	Create Firefox Profile Directory	2025-06-18T15:42:46.6509545Z env:
+post-to-note	Create Firefox Profile Directory	2025-06-18T15:42:46.6509810Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.10/x64
+post-to-note	Create Firefox Profile Directory	2025-06-18T15:42:46.6510270Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.10/x64/lib/pkgconfig
+post-to-note	Create Firefox Profile Directory	2025-06-18T15:42:46.6510687Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.10/x64
+post-to-note	Create Firefox Profile Directory	2025-06-18T15:42:46.6511055Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.10/x64
+post-to-note	Create Firefox Profile Directory	2025-06-18T15:42:46.6511424Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.10/x64
+post-to-note	Create Firefox Profile Directory	2025-06-18T15:42:46.6511797Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.10/x64/lib
+post-to-note	Create Firefox Profile Directory	2025-06-18T15:42:46.6512118Z ##[endgroup]
+post-to-note	Post to Note.com	﻿2025-06-18T15:42:46.6632243Z ##[group]Run source .venv/bin/activate
+post-to-note	Post to Note.com	2025-06-18T15:42:46.6632590Z [36;1msource .venv/bin/activate[0m
+post-to-note	Post to Note.com	2025-06-18T15:42:46.6632977Z [36;1mpython tools/note_post.py --folder security-study --firefox-headless [0m
+post-to-note	Post to Note.com	2025-06-18T15:42:46.6688361Z shell: /usr/bin/bash -e {0}
+post-to-note	Post to Note.com	2025-06-18T15:42:46.6688625Z env:
+post-to-note	Post to Note.com	2025-06-18T15:42:46.6688888Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.10/x64
+post-to-note	Post to Note.com	2025-06-18T15:42:46.6689304Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.10/x64/lib/pkgconfig
+post-to-note	Post to Note.com	2025-06-18T15:42:46.6689713Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.10/x64
+post-to-note	Post to Note.com	2025-06-18T15:42:46.6690086Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.10/x64
+post-to-note	Post to Note.com	2025-06-18T15:42:46.6690462Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.10/x64
+post-to-note	Post to Note.com	2025-06-18T15:42:46.6690840Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.10/x64/lib
+post-to-note	Post to Note.com	2025-06-18T15:42:46.6691155Z ##[endgroup]
+post-to-note	Post to Note.com	2025-06-18T15:42:48.6329363Z INFO:httpx:HTTP Request: GET https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json "HTTP/1.1 200 OK"
+post-to-note	Post to Note.com	2025-06-18T15:42:49.1218084Z [32m2025-06-18 15:42:49.121[0m | [33m[1mWARNING [0m | [36moasis.config[0m:[36mvalidate[0m:[36m29[0m - [33m[1mWordPress の認証情報が不足しています。AUTH_USER, AUTH_PASS, BASE_URL を設定してください。[0m
+post-to-note	Post to Note.com	2025-06-18T15:42:49.1220314Z [32m2025-06-18 15:42:49.121[0m | [1mINFO    [0m | [36moasis.config[0m:[36mvalidate[0m:[36m41[0m - [1mGemini API Key: AIz[0m
+post-to-note	Post to Note.com	2025-06-18T15:42:49.1222344Z [32m2025-06-18 15:42:49.121[0m | [33m[1mWARNING [0m | [36moasis.config[0m:[36mvalidate[0m:[36m45[0m - [33m[1mQiita API トークンが設定されていません。Qiita への投稿機能は無効です。[0m
+post-to-note	Post to Note.com	2025-06-18T15:42:49.1224184Z [32m2025-06-18 15:42:49.121[0m | [1mINFO    [0m | [36moasis.config[0m:[36mvalidate[0m:[36m57[0m - [1mNote Email: cen[0m
+post-to-note	Post to Note.com	2025-06-18T15:42:49.1225575Z [32m2025-06-18 15:42:49.121[0m | [1mINFO    [0m | [36moasis.config[0m:[36mvalidate[0m:[36m58[0m - [1mNote User ID: cle[0m
+post-to-note	Post to Note.com	2025-06-18T15:42:49.3968381Z [32m2025-06-18 15:42:49.396[0m | [33m[1mWARNING [0m | [36moasis.oasis[0m:[36m__init__[0m:[36m105[0m - [33m[1mWordPress API の初期化に失敗しました: 'WordPressAPI' object has no attribute 'base_url'[0m
+post-to-note	Post to Note.com	2025-06-18T15:42:49.3972204Z [32m2025-06-18 15:42:49.396[0m | [1mINFO    [0m | [36moasis.services.llm_api[0m:[36m__init__[0m:[36m17[0m - [1mLLMモデルを初期化: ***, 最大リトライ回数: 3[0m
+post-to-note	Post to Note.com	2025-06-18T15:42:49.3974226Z [32m2025-06-18 15:42:49.396[0m | [1mINFO    [0m | [36moasis.services.ZennAPI_v2[0m:[36m__init__[0m:[36m17[0m - [1mZennAPIV2 インスタンスを初期化しています...[0m
+post-to-note	Post to Note.com	2025-06-18T15:42:49.3976064Z 2025-06-18 15:42:49.396 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5400524Z 2025-06-18 15:42:49.539 
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5401778Z   [33m[1mWarning:[0m to view this Streamlit app on a browser, run it with the following
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5402649Z   command:
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5402930Z 
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5403199Z     streamlit run tools/note_post.py [ARGUMENTS]
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5404716Z 2025-06-18 15:42:49.539 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5406156Z 2025-06-18 15:42:49.539 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5407684Z 2025-06-18 15:42:49.540 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5409554Z [32m2025-06-18 15:42:49.540[0m | [1mINFO    [0m | [36moasis.oasis[0m:[36mread_markdown[0m:[36m203[0m - [1mMarkdownファイルの読み込みが完了しました: タイトル '[学習テーマ]とは？'[0m
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5411292Z 2025-06-18 15:42:49.540 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5412798Z 2025-06-18 15:42:49.540 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5415004Z 2025-06-18 15:42:49.540 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5416210Z 2025-06-18 15:42:49.540 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5417402Z 2025-06-18 15:42:49.540 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5418367Z 2025-06-18 15:42:49.540 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5419069Z 2025-06-18 15:42:49.541 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5419755Z 2025-06-18 15:42:49.541 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5420431Z 2025-06-18 15:42:49.541 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5421128Z 2025-06-18 15:42:49.541 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5522971Z 2025-06-18 15:42:49.552 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5524499Z 2025-06-18 15:42:49.552 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5525715Z 2025-06-18 15:42:49.552 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5526942Z 2025-06-18 15:42:49.552 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5528081Z 2025-06-18 15:42:49.552 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5528848Z 2025-06-18 15:42:49.552 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5529569Z 2025-06-18 15:42:49.552 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5530616Z 2025-06-18 15:42:49.552 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5531759Z 2025-06-18 15:42:49.552 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5532939Z 2025-06-18 15:42:49.552 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5534771Z [32m2025-06-18 15:42:49.552[0m | [1mINFO    [0m | [36moasis.services.file_handler[0m:[36mget_thumbnail[0m:[36m36[0m - [1mサムネイル画像が見つかりません。[0m
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5536168Z [32m2025-06-18 15:42:49.553[0m | [1mINFO    [0m | [36moasis.oasis[0m:[36mfind_thumbnail[0m:[36m216[0m - [1mサムネイル画像が見つかりませんでした。[0m
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5537354Z 2025-06-18 15:42:49.553 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5538157Z 2025-06-18 15:42:49.553 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5538845Z 2025-06-18 15:42:49.553 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5539531Z 2025-06-18 15:42:49.553 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5540229Z 2025-06-18 15:42:49.553 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5541354Z 2025-06-18 15:42:49.553 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5542918Z 2025-06-18 15:42:49.553 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5544544Z 2025-06-18 15:42:49.553 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5545805Z 2025-06-18 15:42:49.553 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5546997Z 2025-06-18 15:42:49.553 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5547812Z 2025-06-18 15:42:49.553 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5548499Z 2025-06-18 15:42:49.554 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5549637Z 2025-06-18 15:42:49.554 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5550721Z 2025-06-18 15:42:49.554 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5551502Z 2025-06-18 15:42:49.554 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5552201Z 2025-06-18 15:42:49.554 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5552888Z 2025-06-18 15:42:49.554 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5553565Z 2025-06-18 15:42:49.554 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5554244Z 2025-06-18 15:42:49.554 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5555145Z 2025-06-18 15:42:49.554 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5556041Z [32m2025-06-18 15:42:49.554[0m | [1mINFO    [0m | [36moasis.services.llm_api[0m:[36mgenerate_english_slug[0m:[36m90[0m - [1m英語のスラグ生成を開始[0m
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5557266Z [32m2025-06-18 15:42:49.554[0m | [1mINFO    [0m | [36moasis.services.llm_api[0m:[36m_get_completion_with_retry[0m:[36m22[0m - [1mLLMにリクエストを送信中: *** (試行 1/3)[0m
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5620570Z [92m15:42:49 - LiteLLM:INFO[0m: utils.py:3119 - 
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5621030Z LiteLLM completion() model= gemini-2.5-flash-preview-05-20; provider = gemini
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5621403Z INFO:LiteLLM:
+post-to-note	Post to Note.com	2025-06-18T15:42:49.5621710Z LiteLLM completion() model= gemini-2.5-flash-preview-05-20; provider = gemini
+post-to-note	Post to Note.com	2025-06-18T15:42:50.0552606Z 2025-06-18 15:42:50.054 Thread 'Thread-5': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:50.0553834Z 2025-06-18 15:42:50.055 Thread 'Thread-5': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:50.0555223Z 2025-06-18 15:42:50.055 Thread 'Thread-5': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:59.0360830Z INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=*** "HTTP/1.1 200 OK"
+post-to-note	Post to Note.com	2025-06-18T15:42:59.0386674Z [92m15:42:59 - LiteLLM:INFO[0m: utils.py:1215 - Wrapper: Completed Call, calling success_handler
+post-to-note	Post to Note.com	2025-06-18T15:42:59.0387588Z INFO:LiteLLM:Wrapper: Completed Call, calling success_handler
+post-to-note	Post to Note.com	2025-06-18T15:42:59.0391400Z [92m15:42:59 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ***
+post-to-note	Post to Note.com	2025-06-18T15:42:59.0392606Z INFO:LiteLLM:selected model name for cost calculation: ***
+post-to-note	Post to Note.com	2025-06-18T15:42:59.0399584Z [92m15:42:59 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ***
+post-to-note	Post to Note.com	2025-06-18T15:42:59.0401434Z INFO:LiteLLM:selected model name for cost calculation: ***
+post-to-note	Post to Note.com	2025-06-18T15:42:59.0403992Z [32m2025-06-18 15:42:59.040[0m | [1mINFO    [0m | [36moasis.services.llm_api[0m:[36m_get_completion_with_retry[0m:[36m25[0m - [1mcontent: 
+post-to-note	Post to Note.com	2025-06-18T15:42:59.0405223Z ```json
+post-to-note	Post to Note.com	2025-06-18T15:42:59.0405618Z {
+post-to-note	Post to Note.com	2025-06-18T15:42:59.0406066Z     "slug": "what-is-learning-theme"
+post-to-note	Post to Note.com	2025-06-18T15:42:59.0406611Z }
+post-to-note	Post to Note.com	2025-06-18T15:42:59.0407090Z ```[0m
+post-to-note	Post to Note.com	2025-06-18T15:42:59.0408262Z [32m2025-06-18 15:42:59.040[0m | [1mINFO    [0m | [36moasis.services.llm_api[0m:[36mgenerate_english_slug[0m:[36m103[0m - [1m英語のスラグ生成が完了[0m
+post-to-note	Post to Note.com	2025-06-18T15:42:59.0409931Z [32m2025-06-18 15:42:59.040[0m | [1mINFO    [0m | [36moasis.oasis[0m:[36mgenerate_slug[0m:[36m241[0m - [1m英語のスラグ生成が完了しました: what-is-learning-theme[0m
+post-to-note	Post to Note.com	2025-06-18T15:42:59.0411301Z 2025-06-18 15:42:59.040 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:59.0412440Z 2025-06-18 15:42:59.040 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:59.0413679Z 2025-06-18 15:42:59.040 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:59.0414964Z 2025-06-18 15:42:59.041 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:59.0416266Z 2025-06-18 15:42:59.041 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:59.0417564Z 2025-06-18 15:42:59.041 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:59.0418690Z 2025-06-18 15:42:59.041 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:59.0419406Z 2025-06-18 15:42:59.041 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:59.0420277Z 2025-06-18 15:42:59.041 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:59.0421571Z 2025-06-18 15:42:59.041 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:59.0423247Z [32m2025-06-18 15:42:59.042[0m | [1mINFO    [0m | [36moasis.services.llm_api[0m:[36msuggest_categories_and_tags[0m:[36m52[0m - [1mカテゴリとタグの提案を開始[0m
+post-to-note	Post to Note.com	2025-06-18T15:42:59.0425530Z [32m2025-06-18 15:42:59.042[0m | [1mINFO    [0m | [36moasis.services.llm_api[0m:[36m_get_completion_with_retry[0m:[36m22[0m - [1mLLMにリクエストを送信中: *** (試行 1/3)[0m
+post-to-note	Post to Note.com	2025-06-18T15:42:59.0431357Z [92m15:42:59 - LiteLLM:INFO[0m: utils.py:3119 - 
+post-to-note	Post to Note.com	2025-06-18T15:42:59.0432131Z LiteLLM completion() model= gemini-2.5-flash-preview-05-20; provider = gemini
+post-to-note	Post to Note.com	2025-06-18T15:42:59.0432780Z INFO:LiteLLM:
+post-to-note	Post to Note.com	2025-06-18T15:42:59.0433345Z LiteLLM completion() model= gemini-2.5-flash-preview-05-20; provider = gemini
+post-to-note	Post to Note.com	2025-06-18T15:42:59.0437909Z /home/runner/work/Docs-Study/Docs-Study/.venv/lib/python3.12/site-packages/pydantic/main.py:463: UserWarning: Pydantic serializer warnings:
+post-to-note	Post to Note.com	2025-06-18T15:42:59.0440047Z   PydanticSerializationUnexpectedValue(Expected 9 fields but got 5: Expected `Message` - serialized value may not be as expected [input_value=Message(content='```json\...er_specific_fields=None), input_type=Message])
+post-to-note	Post to Note.com	2025-06-18T15:42:59.0441552Z   PydanticSerializationUnexpectedValue(Expected `StreamingChoices` - serialized value may not be as expected [input_value=Choices(finish_reason='st...r_specific_fields=None)), input_type=Choices])
+post-to-note	Post to Note.com	2025-06-18T15:42:59.0442346Z   return self.__pydantic_serializer__.to_python(
+post-to-note	Post to Note.com	2025-06-18T15:42:59.0449378Z [92m15:42:59 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ***
+post-to-note	Post to Note.com	2025-06-18T15:42:59.0450444Z INFO:LiteLLM:selected model name for cost calculation: ***
+post-to-note	Post to Note.com	2025-06-18T15:42:59.5426330Z 2025-06-18 15:42:59.542 Thread 'Thread-6': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:59.5428110Z 2025-06-18 15:42:59.542 Thread 'Thread-6': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:42:59.5429229Z 2025-06-18 15:42:59.542 Thread 'Thread-6': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:43:07.7186747Z INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=*** "HTTP/1.1 200 OK"
+post-to-note	Post to Note.com	2025-06-18T15:43:07.7195208Z [92m15:43:07 - LiteLLM:INFO[0m: utils.py:1215 - Wrapper: Completed Call, calling success_handler
+post-to-note	Post to Note.com	2025-06-18T15:43:07.7196388Z INFO:LiteLLM:Wrapper: Completed Call, calling success_handler
+post-to-note	Post to Note.com	2025-06-18T15:43:07.7198099Z [92m15:43:07 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ***
+post-to-note	Post to Note.com	2025-06-18T15:43:07.7200115Z INFO:LiteLLM:selected model name for cost calculation: ***
+post-to-note	Post to Note.com	2025-06-18T15:43:07.7202981Z [32m2025-06-18 15:43:07.720[0m | [1mINFO    [0m | [36moasis.services.llm_api[0m:[36m_get_completion_with_retry[0m:[36m25[0m - [1mcontent: 
+post-to-note	Post to Note.com	2025-06-18T15:43:07.7203885Z ```json
+post-to-note	Post to Note.com	2025-06-18T15:43:07.7204174Z {
+post-to-note	Post to Note.com	2025-06-18T15:43:07.7204608Z     "categories": [
+post-to-note	Post to Note.com	2025-06-18T15:43:07.7204933Z         {
+post-to-note	Post to Note.com	2025-06-18T15:43:07.7205355Z             "name": "解説",
+post-to-note	Post to Note.com	2025-06-18T15:43:07.7205756Z             "slug": "explanation"
+post-to-note	Post to Note.com	2025-06-18T15:43:07.7222577Z         }
+post-to-note	Post to Note.com	2025-06-18T15:43:07.7222928Z     ],
+post-to-note	Post to Note.com	2025-06-18T15:43:07.7223205Z     "tags": [
+post-to-note	Post to Note.com	2025-06-18T15:43:07.7223493Z         {
+post-to-note	Post to Note.com	2025-06-18T15:43:07.7223919Z             "name": "基礎",
+post-to-note	Post to Note.com	2025-06-18T15:43:07.7224288Z             "slug": "basics"
+post-to-note	Post to Note.com	2025-06-18T15:43:07.7224816Z         },
+post-to-note	Post to Note.com	2025-06-18T15:43:07.7225095Z         {
+post-to-note	Post to Note.com	2025-06-18T15:43:07.7225469Z             "name": "技術",
+post-to-note	Post to Note.com	2025-06-18T15:43:07.7225837Z             "slug": "technology"
+post-to-note	Post to Note.com	2025-06-18T15:43:07.7226214Z         },
+post-to-note	Post to Note.com	2025-06-18T15:43:07.7226517Z         {
+post-to-note	Post to Note.com	2025-06-18T15:43:07.7226924Z             "name": "事例",
+post-to-note	Post to Note.com	2025-06-18T15:43:07.7227318Z             "slug": "case-studies"
+post-to-note	Post to Note.com	2025-06-18T15:43:07.7227734Z         }
+post-to-note	Post to Note.com	2025-06-18T15:43:07.7228032Z     ]
+post-to-note	Post to Note.com	2025-06-18T15:43:07.7228319Z }
+post-to-note	Post to Note.com	2025-06-18T15:43:07.7228655Z ```[0m
+post-to-note	Post to Note.com	2025-06-18T15:43:07.7229550Z [32m2025-06-18 15:43:07.720[0m | [32m[1mSUCCESS [0m | [36moasis.services.llm_api[0m:[36msuggest_categories_and_tags[0m:[36m85[0m - [32m[1mカテゴリとタグの提案が完了[0m
+post-to-note	Post to Note.com	2025-06-18T15:43:07.7230585Z [92m15:43:07 - LiteLLM:INFO[0m: cost_calculator.py:655 - selected model name for cost calculation: ***
+post-to-note	Post to Note.com	2025-06-18T15:43:07.7231395Z [32m2025-06-18 15:43:07.721[0m | [1mINFO    [0m | [36moasis.oasis[0m:[36msuggest_categories_and_tags[0m:[36m249[0m - [1mカテゴリとタグの提案が完了しました: カテゴリ 1, タグ 3[0m
+post-to-note	Post to Note.com	2025-06-18T15:43:07.7232174Z INFO:LiteLLM:selected model name for cost calculation: ***
+post-to-note	Post to Note.com	2025-06-18T15:43:07.7233163Z 2025-06-18 15:43:07.721 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:43:07.7234072Z 2025-06-18 15:43:07.721 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:43:07.7235273Z 2025-06-18 15:43:07.722 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:43:07.7236505Z 2025-06-18 15:43:07.722 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:43:07.7237588Z 2025-06-18 15:43:07.722 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:43:07.7238477Z 2025-06-18 15:43:07.722 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:43:07.7239174Z 2025-06-18 15:43:07.722 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:43:07.7239870Z 2025-06-18 15:43:07.722 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:43:07.7241031Z 2025-06-18 15:43:07.722 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:43:07.7241718Z 2025-06-18 15:43:07.722 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:43:07.7242625Z [32m2025-06-18 15:43:07.722[0m | [1mINFO    [0m | [36moasis.services.note_api_v2[0m:[36mcreate_article[0m:[36m446[0m - [1m記事の作成を開始します...[0m
+post-to-note	Post to Note.com	2025-06-18T15:43:07.7243466Z [32m2025-06-18 15:43:07.722[0m | [1mINFO    [0m | [36moasis.services.note_api_v2[0m:[36m_init_driver[0m:[36m73[0m - [1mWebDriverを初期化しています...[0m
+post-to-note	Post to Note.com	2025-06-18T15:43:07.7244759Z [32m2025-06-18 15:43:07.723[0m | [34m[1mDEBUG   [0m | [36moasis.services.note_api_v2[0m:[36m_init_driver[0m:[36m99[0m - [34m[1mprofile_path: /home/runner/work/Docs-Study/Docs-Study/.firefox_profile_oasis[0m
+post-to-note	Post to Note.com	2025-06-18T15:43:07.7245848Z [32m2025-06-18 15:43:07.723[0m | [34m[1mDEBUG   [0m | [36moasis.services.note_api_v2[0m:[36m_init_driver[0m:[36m100[0m - [34m[1mfirefox_binary: /usr/bin/firefox[0m
+post-to-note	Post to Note.com	2025-06-18T15:43:07.7246399Z INFO:WDM:====== WebDriver manager ======
+post-to-note	Post to Note.com	2025-06-18T15:43:07.9022376Z INFO:WDM:Get LATEST geckodriver version for 139.0 firefox
+post-to-note	Post to Note.com	2025-06-18T15:43:07.9821026Z INFO:WDM:Get LATEST geckodriver version for 139.0 firefox
+post-to-note	Post to Note.com	2025-06-18T15:43:08.0058747Z INFO:WDM:There is no [linux64] geckodriver "v0.36.0" for browser firefox "139.0" in cache
+post-to-note	Post to Note.com	2025-06-18T15:43:08.0059777Z INFO:WDM:Get LATEST geckodriver version for 139.0 firefox
+post-to-note	Post to Note.com	2025-06-18T15:43:08.0300333Z INFO:WDM:Getting latest mozilla release info for v0.36.0
+post-to-note	Post to Note.com	2025-06-18T15:43:08.1103850Z INFO:WDM:About to download new driver from https://github.com/mozilla/geckodriver/releases/download/v0.36.0/geckodriver-v0.36.0-linux64.tar.gz
+post-to-note	Post to Note.com	2025-06-18T15:43:08.1935923Z INFO:WDM:Driver downloading response is 200
+post-to-note	Post to Note.com	2025-06-18T15:43:08.2229796Z 2025-06-18 15:43:08.222 Thread 'Thread-7': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:43:08.2230986Z 2025-06-18 15:43:08.222 Thread 'Thread-7': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:43:08.2231713Z 2025-06-18 15:43:08.222 Thread 'Thread-7': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:43:08.2256344Z INFO:WDM:Get LATEST geckodriver version for 139.0 firefox
+post-to-note	Post to Note.com	2025-06-18T15:43:08.3100089Z INFO:WDM:Driver has been saved in cache [/home/runner/.wdm/drivers/geckodriver/linux64/v0.36.0]
+post-to-note	Post to Note.com	2025-06-18T15:43:15.7261916Z [32m2025-06-18 15:43:15.725[0m | [32m[1mSUCCESS [0m | [36moasis.services.note_api_v2[0m:[36m_init_driver[0m:[36m109[0m - [32m[1mWebDriverの初期化が完了しました。[0m
+post-to-note	Post to Note.com	2025-06-18T15:43:15.7264816Z [32m2025-06-18 15:43:15.726[0m | [1mINFO    [0m | [36moasis.services.note_api_v2[0m:[36m_login[0m:[36m119[0m - [1mNoteにログインしています...[0m
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0445104Z [32m2025-06-18 15:43:25.044[0m | [32m[1mSUCCESS [0m | [36moasis.services.note_api_v2[0m:[36m_login[0m:[36m147[0m - [32m[1mNoteへのログインが完了しました。[0m
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0447001Z [32m2025-06-18 15:43:25.044[0m | [1mINFO    [0m | [36moasis.services.note_api_v2[0m:[36m_input_title[0m:[36m156[0m - [1m記事のタイトルを入力しています...[0m
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0553915Z 2025-06-18 15:43:25.055 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0555611Z 2025-06-18 15:43:25.055 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0556926Z 2025-06-18 15:43:25.055 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0557874Z Traceback (most recent call last):
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0569481Z   File "/home/runner/work/Docs-Study/Docs-Study/tools/note_post.py", line 71, in <module>
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0570945Z [DEBUG] .env file loaded.
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0571650Z [DEBUG] NOTE_EMAIL exists: True
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0572088Z [DEBUG] NOTE_PASSWORD exists: True
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0572534Z [DEBUG] NOTE_USER_ID exists: True
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0572974Z [DEBUG] GEMINI_API_KEY exists: True
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0573423Z [DEBUG] LLM_MODEL exists: True
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0573880Z [INFO] Firefox Binary Path: /usr/bin/firefox
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0574827Z [INFO] Firefox Profile Path: /home/runner/work/Docs-Study/Docs-Study/.firefox_profile_oasis
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0575601Z [DEBUG] OASIS instance initialized.
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0576411Z [INFO] Note.comへの投稿を開始します: security-study
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0577019Z [DEBUG] Calling oasis.process_folder with folder: security-study
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0577606Z __  __     _   _         _             _     ____   ___ __     __ ____  
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0578100Z \ \ \ \   | \ | |  ___  | |_   ___    / \   |  _ \ |_ _|\ \   / /|___ \ 
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0578584Z  \ \ \ \  |  \| | / _ \ | __| / _ \  / _ \  | |_) | | |  \ \ / /   __) |
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0579080Z  / / / /  | |\  || (_) || |_ |  __/ / ___ \ |  __/  | |   \ V /   / __/ 
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0579382Z /_/ /_/   |_| \_| \___/  \__| \___|/_/   \_\|_|    |___|   \_/   |_____|
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0579667Z                                                                         
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0579845Z 
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0580012Z     main() 
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0580194Z     ^^^^^^
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0580599Z   File "/home/runner/work/Docs-Study/Docs-Study/tools/note_post.py", line 52, in main
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0581009Z     result = oasis.process_folder(
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0581249Z              ^^^^^^^^^^^^^^^^^^^^^
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0581785Z   File "/home/runner/work/Docs-Study/Docs-Study/.venv/lib/python3.12/site-packages/oasis/oasis.py", line 190, in process_folder
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0582351Z     self.post_to_note(post, note_mermaid_md)
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0582883Z   File "/home/runner/work/Docs-Study/Docs-Study/.venv/lib/python3.12/site-packages/oasis/oasis.py", line 53, in wrapper
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0583402Z     result = func(*args, **kwargs)
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0583626Z              ^^^^^^^^^^^^^^^^^^^^^
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0584142Z   File "/home/runner/work/Docs-Study/Docs-Study/.venv/lib/python3.12/site-packages/oasis/oasis.py", line 279, in post_to_note
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0585988Z     note_result = self.note_api.create_article(post.title, tags, text=note_mermaid_md, headless=self.firefox_headless, post_setting=self.note_publish)
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0586597Z                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0587262Z   File "/home/runner/work/Docs-Study/Docs-Study/.venv/lib/python3.12/site-packages/oasis/services/note_api_v2.py", line 464, in create_article
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0587856Z     self._input_title(driver, title)
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0588455Z   File "/home/runner/work/Docs-Study/Docs-Study/.venv/lib/python3.12/site-packages/oasis/services/note_api_v2.py", line 160, in _input_title
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0589052Z     textarea.click()
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0589629Z   File "/home/runner/work/Docs-Study/Docs-Study/.venv/lib/python3.12/site-packages/selenium/webdriver/remote/webelement.py", line 121, in click
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0590244Z     self._execute(Command.CLICK_ELEMENT)
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0590911Z   File "/home/runner/work/Docs-Study/Docs-Study/.venv/lib/python3.12/site-packages/selenium/webdriver/remote/webelement.py", line 574, in _execute
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0591545Z     return self._parent.execute(command, params)
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0591826Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0592435Z   File "/home/runner/work/Docs-Study/Docs-Study/.venv/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py", line 447, in execute
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0593052Z     self.error_handler.check_response(response)
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0593737Z   File "/home/runner/work/Docs-Study/Docs-Study/.venv/lib/python3.12/site-packages/selenium/webdriver/remote/errorhandler.py", line 232, in check_response
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0595071Z     raise exception_class(message, screen, stacktrace)
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0595927Z selenium.common.exceptions.ElementNotInteractableException: Message: Element <textarea id="g-recaptcha-response" class="g-recaptcha-response" name="g-recaptcha-response"> could not be scrolled into view
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0596716Z Stacktrace:
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0597004Z RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0597479Z WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:199:5
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0598027Z ElementNotInteractableError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:368:5
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0598612Z webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:165:11
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0599178Z interaction.clickElement@chrome://remote/content/marionette/interaction.sys.mjs:134:11
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0599791Z clickElement@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:297:29
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0600446Z receiveMessage@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:180:31
+post-to-note	Post to Note.com	2025-06-18T15:43:25.0600825Z 
+post-to-note	Post to Note.com	2025-06-18T15:43:25.5195845Z ##[error]Process completed with exit code 1.
+post-to-note	Post Checkout repository	﻿2025-06-18T15:43:25.5296273Z Post job cleanup.
+post-to-note	Post Checkout repository	2025-06-18T15:43:25.6326623Z [command]/usr/bin/git version
+post-to-note	Post Checkout repository	2025-06-18T15:43:25.6368365Z git version 2.49.0
+post-to-note	Post Checkout repository	2025-06-18T15:43:25.6419861Z Temporarily overriding HOME='/home/runner/work/_temp/7fbd30d4-d55d-49e5-8e42-657d421fad2c' before making global git config changes
+post-to-note	Post Checkout repository	2025-06-18T15:43:25.6421020Z Adding repository directory to the temporary git global config as a safe directory
+post-to-note	Post Checkout repository	2025-06-18T15:43:25.6426917Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Docs-Study/Docs-Study
+post-to-note	Post Checkout repository	2025-06-18T15:43:25.6476997Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+post-to-note	Post Checkout repository	2025-06-18T15:43:25.6513824Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+post-to-note	Post Checkout repository	2025-06-18T15:43:25.6761337Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+post-to-note	Post Checkout repository	2025-06-18T15:43:25.6785334Z http.https://github.com/.extraheader
+post-to-note	Post Checkout repository	2025-06-18T15:43:25.6798447Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+post-to-note	Post Checkout repository	2025-06-18T15:43:25.6831497Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+post-to-note	Complete job	﻿2025-06-18T15:43:25.7188071Z Cleaning up orphan processes
+post-to-note	Complete job	2025-06-18T15:43:25.7551408Z Terminate orphan process: pid (2236) (firefox)
+post-to-note	Complete job	2025-06-18T15:43:25.7610747Z Terminate orphan process: pid (2316) (Socket Process)
+post-to-note	Complete job	2025-06-18T15:43:25.7692538Z Terminate orphan process: pid (2334) (WebExtensions)
+post-to-note	Complete job	2025-06-18T15:43:25.7732361Z Terminate orphan process: pid (2347) (RDD Process)
+post-to-note	Complete job	2025-06-18T15:43:25.7769430Z Terminate orphan process: pid (2422) (Isolated Web Co)
+post-to-note	Complete job	2025-06-18T15:43:25.7817356Z Terminate orphan process: pid (2426) (Isolated Web Co)
+post-to-note	Complete job	2025-06-18T15:43:25.7875573Z Terminate orphan process: pid (2471) (Web Content)
