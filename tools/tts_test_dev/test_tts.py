@@ -2,9 +2,8 @@ import os
 import mimetypes
 import struct
 import sys
-import xml.etree.ElementTree as ET
-from google.genai import Client
-from google.genai.types import (Content, Part, GenerateContentConfig, SpeechConfig, MultiSpeakerVoiceConfig, SpeakerVoiceConfig, VoiceConfig, PrebuiltVoiceConfig)
+# import xml.etree.ElementTree as ET
+import google.generativeai as genai
 from dotenv import load_dotenv
 from typing import Optional
 
@@ -51,157 +50,94 @@ def save_binary_file(file_name, data, mime_type):
         data_to_save = add_wav_header(data)
     else:
         data_to_save = data
-
+    
     with open(file_name, "wb") as f:
         f.write(data_to_save)
     print(f"File saved to: {file_name}")
 
-def generate(ssml_content: str, speaker1_voice: str = "Zephyr", speaker2_voice: str = "Puck"):
-    client = Client(
-        api_key=os.environ.get("GEMINI_API_KEY"),
+def generate(text_content: str, api_key: str, output_path: str, speaker1_voice: str = "Zephyr", speaker2_voice: str = "Puck", speaking_rate: Optional[str] = None, pitch: Optional[str] = None):
+    genai.configure(api_key=api_key)
+
+    model = genai.GenerativeModel(
+        model_name="gemini-2.5-flash-preview-tts",
+        generation_config={
+            "response_mime_type": 'audio/wav',
+            "speech_config": {
+                "output_audio_encoding": "LINEAR16_UNCOMPRESSED",
+                "sample_rate_hertz": 24000,
+                "speaking_rate": 1.0,
+                "pitch": 0.0,
+                "volume_gain_db": 0.0
+            }
+        }
     )
 
-    model = "gemini-2.5-flash-preview-tts"
+    # スタイル調整のためのプロンプトを追加
+    modified_text_content = text_content
+    if speaking_rate == "slow":
+        modified_text_content = "ゆっくり話してください.\n" + modified_text_content
+    elif speaking_rate == "fast":
+        modified_text_content = "速く話してください.\n" + modified_text_content
 
-    # SSMLを解析し、プロンプトテキストを構築
-    # 名前空間を明示的に定義
-    SSML_NAMESPACE = "{http://www.w3.org/2001/10/synthesis}"
-    ET.register_namespace('', 'http://www.w3.org/2001/10/synthesis') # デフォルト名前空間を登録
-    
-    root = ET.fromstring(ssml_content)
-    prompt_text = ""
-
-    for p_tag in root.findall(f'.//{SSML_NAMESPACE}p'):
-        for s_tag in p_tag.findall(f'.//{SSML_NAMESPACE}s'):
-            speaker_name = s_tag.get('speaker', 'Speaker 1') # デフォルトはSpeaker 1
-            
-            segment_instructions = []
-
-            # s_tag内のすべてのテキストコンテンツを抽出
-            # element.itertext()を使用して、要素とその子孫要素のテキストコンテンツを順に取得
-            full_s_tag_text = "".join(s_tag.itertext()).strip()
-            
-            # prosodyタグの処理を分離して、指示を先頭に追加
-            for element in s_tag.findall(f'.//{SSML_NAMESPACE}prosody'):
-                rate = element.get('rate')
-                if rate == "80%":
-                    segment_instructions.append("(ゆっくりと話してください)")
-                elif rate == "120%":
-                    segment_instructions.append("(速く話してください)")
-                elif rate == "normal":
-                    segment_instructions.append("(通常の速度で話してください)")
-
-            # breakタグの処理
-            for element in s_tag.findall(f'.//{SSML_NAMESPACE}break'):
-                time = element.get('time')
-                if time:
-                    segment_instructions.append(f"(約{time}のポーズ)")
-
-            # プロンプトテキストの構築
-            if segment_instructions:
-                speaker_dialogue = " ".join(segment_instructions) + " " + full_s_tag_text
-            else:
-                speaker_dialogue = full_s_tag_text
-
-            if speaker_dialogue.strip(): # 空でないか確認
-                prompt_text += f"{speaker_name}: {speaker_dialogue.strip()}\n"
-
-    print(f"Generated Prompt Text:\n---\n{prompt_text}---\n") # Debug print
-
+    if pitch == "high":
+        modified_text_content = "高いピッチで話してください.\n" + modified_text_content
+    elif pitch == "low":
+        modified_text_content = "低いピッチで話してください.\n" + modified_text_content
+ 
     contents = [
-        Content(
-            role="user",
-            parts=[
-                Part.from_text(text=prompt_text),
-            ],
-        ),
+        modified_text_content
     ]
-    generate_content_config = GenerateContentConfig(
-        temperature=1,
-        response_modalities=[
-            "audio",
-        ],
-        speech_config=SpeechConfig(
-            multi_speaker_voice_config=MultiSpeakerVoiceConfig(
-                speaker_voice_configs=[
-                    SpeakerVoiceConfig(
-                        speaker="Speaker 1",
-                        voice_config=VoiceConfig(
-                            prebuilt_voice_config=PrebuiltVoiceConfig(
-                                voice_name=speaker1_voice
-                            )
-                        ),
-                    ),
-                    SpeakerVoiceConfig(
-                        speaker="Speaker 2",
-                        voice_config=VoiceConfig(
-                            prebuilt_voice_config=PrebuiltVoiceConfig(
-                                voice_name=speaker2_voice
-                            )
-                        ),
-                    ),
-                ]
-            ),
-        ),
+
+    response = model.generate_content(
+        contents=contents
     )
-
+    
     file_index = 0
-    for chunk in client.models.generate_content_stream(
-        model=model,
-        contents=contents,
-        config=generate_content_config,
-    ):
-        if chunk.candidates is None or not chunk.candidates:
-            print("No candidates in chunk.")
+    audio_data = b''
+    for chunk in response:
+        if (
+            chunk.candidates is None
+            or chunk.candidates[0].content is None
+            or chunk.candidates[0].content.parts is None
+        ):
             continue
-
-        candidate = chunk.candidates[0]
-        if candidate.content is None or not candidate.content.parts:
-            print("No content parts in candidate.")
-            continue
-
-        first_part = candidate.content.parts[0]
-        if first_part.inline_data and first_part.inline_data.data:
-            file_name = f"output_audio_{file_index}"
+        if chunk.candidates[0].content.parts[0].inline_data and chunk.candidates[0].content.parts[0].inline_data.data:
+            file_name = f"{output_path}_{file_index}.wav"
             file_index += 1
-            inline_data = first_part.inline_data
+            inline_data = chunk.candidates[0].content.parts[0].inline_data
             data_buffer = inline_data.data
             
             file_extension = get_file_extension_from_mime_type(inline_data.mime_type)
-            
             if file_extension is None:
                 file_extension = mimetypes.guess_extension(inline_data.mime_type)
                 if file_extension is None:
                     print(f"Warning: Could not determine file extension for MIME type: {inline_data.mime_type}. Defaulting to .mp3")
                     file_extension = ".mp3"
-            save_binary_file(f"{file_name}{file_extension}", data_buffer, inline_data.mime_type)
+            save_binary_file(file_name, data_buffer, inline_data.mime_type)
         else:
-            # テキストチャンクが返された場合、その内容を出力
-            if chunk.text:
-                print(f"Received non-audio chunk (text): {chunk.text}")
-            else:
-                print("Received non-audio chunk (no text content).")
-
-# convert_to_wav関数とparse_audio_mime_type関数は、
-# mimetypes.guess_extensionがNoneを返す問題の回避策として不要になったため削除します。
+            print(chunk.text)
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("使用法: python test_tts.py <SSMLファイルパス> [speaker1_voice] [speaker2_voice]")
+        print("使用法: python test_tts.py <テキストファイルパス> [speaker1_voice] [speaker2_voice] [speaking_rate] [pitch]")
         sys.exit(1)
     
-    ssml_file_path = sys.argv[1]
+    text_file_path = sys.argv[1]
     
     speaker1_voice = sys.argv[2] if len(sys.argv) > 2 else "Zephyr"
     speaker2_voice = sys.argv[3] if len(sys.argv) > 3 else "Puck"
+    speaking_rate = sys.argv[4] if len(sys.argv) > 4 else None
+    pitch = sys.argv[5] if len(sys.argv) > 5 else None
+
+    output_base_name = os.path.splitext(text_file_path)[0]
+    output_file_path = f"{output_base_name}_output"
 
     try:
-        with open(ssml_file_path, "r", encoding="utf-8") as f:
-            ssml_content = f.read()
-        generate(ssml_content, speaker1_voice, speaker2_voice)
+        with open(text_file_path, "r", encoding="utf-8") as f:
+            script_content = f.read()
+        generate(script_content, os.environ.get("GEMINI_API_KEY"), output_file_path, speaker1_voice, speaker2_voice, speaking_rate, pitch)
     except FileNotFoundError:
-        print(f"エラー: ファイルが見つかりません - {ssml_file_path}")
+        print(f"エラー: ファイルが見つかりません - {text_file_path}")
         sys.exit(1)
     except Exception as e:
-        print(f"エラーが発生しました: {e}")
-        sys.exit(1) 
+        print(f"エラーが発生しました: {e}") 
