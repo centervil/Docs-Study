@@ -21,6 +21,7 @@ jobs:
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         fetch-depth: 0
+        submodules: true
     
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -79,7 +80,14 @@ jobs:
           --output "$OUTPUT_FOLDER_PATH/Day${CURRENT_DAY}_ITIL4-Foundation_study.md" \
           --template "$FORMAT_FILE_PATH" \
           --prompt "$PROMPT_FILE_PATH" # Pass the file path here
-    
+
+    - name: Post-process generated study material
+      if: steps.check_max.outputs.should_continue == 'true'
+      run: |
+        CURRENT_DAY=${{ steps.read_day.outputs.current_day }}
+        OUTPUT_FOLDER_PATH="${{ env.OUTPUT_FOLDER_PATH }}"
+        python Docs-common/tools/document_processor.py "$OUTPUT_FOLDER_PATH/Day${CURRENT_DAY}_ITIL4-Foundation_study.md"
+
     - name: Increment day number and save
       if: steps.check_max.outputs.should_continue == 'true'
       run: |
