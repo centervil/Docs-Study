@@ -91,7 +91,7 @@ jobs:
       if: steps.check_max.outputs.should_continue == 'true'
       run: |
         CURRENT_DAY=${{ steps.read_day.outputs.current_day }}
-        TEMPLATE_CONTENT=$(cat prompts/itil_day_content_prompt_template.md)
+        TEMPLATE_CONTENT=$(cat prompts/study_day_content_prompt_template.md)
         PROMPT=$(echo "$TEMPLATE_CONTENT" | sed "s/\[DAY_NUMBER\]/$CURRENT_DAY/g")
         
         # Create a temporary file for the prompt and store its path
@@ -112,8 +112,8 @@ jobs:
         OUTPUT_FOLDER_PATH=${{ steps.set_output_folder.outputs.output_folder }} # Use dynamic output folder
         
         python -m content_converter.cli \
-          --input "security-study/ITIL4-Foundation/00_plan.md" \
-          --output "$OUTPUT_FOLDER_PATH/Day${CURRENT_DAY}_ITIL4-Foundation_study.md" \
+          --input "security-study/00_plan.md" \
+          --output "$OUTPUT_FOLDER_PATH/Day${CURRENT_DAY}_study.md" \
           --template "$FORMAT_FILE_PATH" \
           --prompt "$PROMPT_FILE_PATH" # Pass the file path here
 
@@ -122,7 +122,7 @@ jobs:
       run: |
         CURRENT_DAY=${{ steps.read_day.outputs.current_day }}
         OUTPUT_FOLDER_PATH=${{ steps.set_output_folder.outputs.output_folder }} # Use dynamic output folder
-        python Docs-common/tools/document_processor.py "$OUTPUT_FOLDER_PATH/Day${CURRENT_DAY}_ITIL4-Foundation_study.md"
+        python Docs-common/tools/document_processor.py "$OUTPUT_FOLDER_PATH/Day${CURRENT_DAY}_study.md"
 
     - name: Increment day number and save
       if: steps.check_max.outputs.should_continue == 'true'
@@ -145,16 +145,16 @@ jobs:
         OUTPUT_FOLDER_PATH=${{ steps.set_output_folder.outputs.output_folder }} # Use dynamic output folder
         
         # Add the generated study material file
-        git add "$OUTPUT_FOLDER_PATH/Day${CURRENT_DAY}_ITIL4-Foundation_study.md"
+        git add "$OUTPUT_FOLDER_PATH/Day${CURRENT_DAY}_study.md"
         
         # Add the updated current_day.txt
-        git add security-study/ITIL4-Foundation/current_day.txt
+        git add security-study/current_day.txt
         
         # Check if there are changes to commit
         if git diff --staged --quiet; then
           echo "No changes to commit"
         else
-          git commit -m "Add Day${CURRENT_DAY} ITIL 4 study material"
+          git commit -m "Add Day${CURRENT_DAY} study material"
           git push
         fi
     
@@ -162,7 +162,7 @@ jobs:
       if: steps.check_max.outputs.should_continue == 'true'
       run: |
         CURRENT_DAY=${{ steps.read_day.outputs.current_day }}
-        echo "Successfully generated Day${CURRENT_DAY} ITIL 4 study material"
+        echo "Successfully generated Day${CURRENT_DAY} study material"
     
     - name: Workflow stopped - maximum day reached
       if: steps.check_max.outputs.should_continue == 'false'
