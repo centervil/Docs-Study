@@ -26,7 +26,35 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         fetch-depth: 0
         submodules: true
-    
+
+    - name: Set Dynamic Output Folder Path
+      id: set_output_folder
+      run: |
+        INPUT_OUTPUT_FOLDER="${{ github.event.inputs.output_folder }}"
+        THEME_FILE_PATH="security-study/current_theme.txt"
+        DEFAULT_FALLBACK_FOLDER="study-materials/test/"
+        
+        # Check if output_folder input is provided and not empty
+        if [ -n "$INPUT_OUTPUT_FOLDER" ]; then
+          FINAL_OUTPUT_FOLDER="$INPUT_OUTPUT_FOLDER"
+        else
+          # If not provided, try to read from current_theme.txt
+          if [ -f "$THEME_FILE_PATH" ]; then
+            THEME_CONTENT=$(cat "$THEME_FILE_PATH" | tr -d '\n' | sed 's/[[:space:]]*$//') # Read content and remove trailing newline/spaces
+            if [ -n "$THEME_CONTENT" ]; then
+              FINAL_OUTPUT_FOLDER="$THEME_CONTENT"
+            else
+              # Fallback to default if theme file is empty
+              FINAL_OUTPUT_FOLDER="$DEFAULT_FALLBACK_FOLDER"
+            fi
+          else
+            # Fallback to default if theme file does not exist
+            FINAL_OUTPUT_FOLDER="$DEFAULT_FALLBACK_FOLDER"
+          fi
+        fi
+        echo "Chosen output folder: $FINAL_OUTPUT_FOLDER"
+        echo "output_folder=$FINAL_OUTPUT_FOLDER" >> $GITHUB_OUTPUT
+
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
@@ -44,7 +72,7 @@ jobs:
     - name: Read current day number
       id: read_day
       run: | 
-        CURRENT_DAY=$(cat security-study/ITIL4-Foundation/current_day.txt)
+        CURRENT_DAY=$(cat security-study/current_day.txt)
         echo "current_day=$CURRENT_DAY" >> $GITHUB_OUTPUT
         echo "Current day: $CURRENT_DAY"
     
@@ -82,7 +110,7 @@ jobs:
       run: |
         CURRENT_DAY=${{ steps.read_day.outputs.current_day }}
         PROMPT_FILE_PATH=${{ steps.generate_prompt.outputs.prompt_file_path }}
-        OUTPUT_FOLDER_PATH=${{ github.event.inputs.output_folder }} # Use input parameter
+        OUTPUT_FOLDER_PATH=${{ steps.set_output_folder.outputs.output_folder }} # Use dynamic output folder
         
         python -m content_converter.cli \
           --input "security-study/ITIL4-Foundation/00_plan.md" \
@@ -94,7 +122,7 @@ jobs:
       if: steps.check_max.outputs.should_continue == 'true'
       run: |
         CURRENT_DAY=${{ steps.read_day.outputs.current_day }}
-        OUTPUT_FOLDER_PATH=${{ github.event.inputs.output_folder }} # Use input parameter
+        OUTPUT_FOLDER_PATH=${{ steps.set_output_folder.outputs.output_folder }} # Use dynamic output folder
         python Docs-common/tools/document_processor.py "$OUTPUT_FOLDER_PATH/Day${CURRENT_DAY}_ITIL4-Foundation_study.md"
 
     - name: Increment day number and save
@@ -102,7 +130,7 @@ jobs:
       run: |
         CURRENT_DAY=${{ steps.read_day.outputs.current_day }}
         NEXT_DAY=$((CURRENT_DAY + 1))
-        echo "$NEXT_DAY" > security-study/ITIL4-Foundation/current_day.txt
+        echo "$NEXT_DAY" > security-study/current_day.txt
         echo "Updated day number to: $NEXT_DAY"
     
     - name: Configure Git
@@ -115,7 +143,7 @@ jobs:
       if: steps.check_max.outputs.should_continue == 'true'
       run: |
         CURRENT_DAY=${{ steps.read_day.outputs.current_day }}
-        OUTPUT_FOLDER_PATH=${{ github.event.inputs.output_folder }} # Use input parameter
+        OUTPUT_FOLDER_PATH=${{ steps.set_output_folder.outputs.output_folder }} # Use dynamic output folder
         
         # Add the generated study material file
         git add "$OUTPUT_FOLDER_PATH/Day${CURRENT_DAY}_ITIL4-Foundation_study.md"
