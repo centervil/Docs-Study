@@ -1,4 +1,4 @@
-name: ITIL4 Study Material Test Workflow
+name: General Study Material Workflow
 
 on:
   schedule:
@@ -9,7 +9,7 @@ on:
       output_folder:
         description: 'Output folder path for generated study materials.'
         required: false
-        default: 'security-study/ITIL4-Foundation-test/'
+        default: 'study-materials/test/'
 
 env:
   FORMAT_FILE_PATH: templates/study_format.md
