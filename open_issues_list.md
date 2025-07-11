@@ -1,1 +1,0 @@
-No open GitHub issues were found in the `centervil/Docs-Study` repository. 
