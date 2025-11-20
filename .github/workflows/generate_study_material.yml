@@ -9,7 +9,6 @@ on:
       output_folder:
         description: 'Output folder path for generated study materials.'
         required: false
-        default: 'security-study/'
 env:
   FORMAT_FILE_PATH: templates/study_format.md
   MAX_DAY_NUMBER: 30
