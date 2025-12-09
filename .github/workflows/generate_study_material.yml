@@ -104,7 +104,6 @@ jobs:
       if: steps.check_max.outputs.should_continue == 'true'
       env:
         GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-        LLM_MODEL: ${{ secrets.LLM_MODEL }}
       run: |
         CURRENT_DAY=${{ steps.read_day.outputs.current_day }}
         PROMPT_FILE_PATH=${{ steps.generate_prompt.outputs.prompt_file_path }}
@@ -114,7 +113,8 @@ jobs:
           --input "security-study/00_plan.md" \
           --output "$OUTPUT_FOLDER_PATH/Day${CURRENT_DAY}_study.md" \
           --template "$FORMAT_FILE_PATH" \
-          --prompt "$PROMPT_FILE_PATH" # Pass the file path here
+          --prompt "$PROMPT_FILE_PATH" \
+          --model "${{ secrets.LLM_MODEL }}"
 
     - name: Post-process generated study material
       if: steps.check_max.outputs.should_continue == 'true'
